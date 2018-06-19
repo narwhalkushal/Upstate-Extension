@@ -63,13 +63,17 @@ input {
   background-size: 28px;
   margin-bottom: 0px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
   .upstate-logo-left {
-    background: white;
-    /*height: 40px;*/
-    /*width: 40px;*/
-    background-size: 50%;
+    .upstate-logo-small {display: none};
+    .upstate-logo-left {display: none};
   }
+}
+.upstate-logo-small {
+  height: 10px;
+  width: 19px;
+  background-image: url('../img/upstate_seal.png');
+  display: none;
 }
 .upstate-logo-left {
   height: 70px;
@@ -79,11 +83,8 @@ input {
   background-repeat: no-repeat;
   margin: 2vw;
   float: left;
-  display: flex;
-  flex-direction: column;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
+  display: hidden;
 }
 .upstate-weather {
   font-size: 20px;
