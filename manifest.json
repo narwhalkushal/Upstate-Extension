@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "AccessUpstate",
+  "version": "2.0",
+  "chrome_url_overrides" : {
+    "newtab": "UpstateTab.html"
+  },
+  "content_scripts": [{
+    "js":["jquery-3.3.1.min.js", "weather.js", "clock.js", "uptodate.js", windowResize.js],
+    "matches": [ "http://*/*", "https://*/*"]
+    }],
+  "icons": {"128": "img/upstate_seal.png"}
+}

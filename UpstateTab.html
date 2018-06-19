@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link href="style/owfont-regular.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> AccessUpstate </title>
+</head>
+<body>
+    <div class="clock">
+      <div class="upstate-logo-left"></div>
+      <div class="container">
+        <div id="clockVals"></div>
+        <div id="dateVals"></div>
+      </div>
+    <div class="upstate-logo-left"></div>
+  </div>
+  <form method="get" class="searchForm" id="myform" method='POST' autocomplete="off">
+    <input type="text" id="searchVal" class="logo_placement" placeholder="UpToDate Search">
+  </form>
+  
+  <div class="column">
+    <div class="leftColumn vert">
+      <a href="https://webmail.upstate.edu/gw/webacc" class="link-btn">GroupWise</a>
+      <a href="https://bb.upstate.edu/" class="link-btn"> BlackBoard</a>
+      <a href="https://upstate.presence.io/" class="link-btn"> Presence </a>
+      <a href="https://upstate.rev.vbrick.com/#/login" class="link-btn">Vbrick</a>
+      <a href="https://bannerweb.upstate.edu/" class="link-btn">My Upstate</a>
+    </div>
+    <div class="rightColumn">
+      <div class="weatherPane">
+        <p class="upstate-weather"> Syracuse Weather </p>
+        <div class="errors"></div>
+        <div id="showTemp"></div>
+        <div class="weather-row">
+          <div class="showWeatherIcon"></div>
+          <div class="showWeatherIcon"></div>
+        </div>
+        <div id="showDesc"></div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="leftColumn horiz">
+      <div class="buttonRow">
+        <a href="https://facebook.com"><img src="img/facebook.png"class="btn-icon"></a>
+        <a href="https://gmail.com"><img src="img/gmail.png"class="btn-icon" ></a>
+        <a href="https://netflix.com"><img src="img/netflix.png" class="btn-icon"></a>
+      </div>
+    </div>
+    <div class="rightColumnHoriz">
+      <div class="buttonRow">
+        <a href="https://youtube.com"><img src="img/youtube.png"class="btn-icon" ></a>
+        <a href="https://npr.org"><img src="img/npr.png"class="btn-icon" ></a>
+        <a href="https://groupme.com"><img src="img/groupme.png"class="btn-icon"></a>
+      </div>
+    </div>
+  </div>
+  <div class="namecredits"> Developed By: Zach Visco </div>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="weather.js"></script>
+  <script src="weather.js"></script>
+  <script src="clock.js"></script>
+  <script src="uptodate.js"></script>
+  <script src="windowResize.js"></script>
+</body>
+
+</html>

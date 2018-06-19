@@ -1,0 +1,43 @@
+{
+  "coord": {
+    "lon": -76.15,
+    "lat": 43.05
+  },
+  "weather": [
+    {
+      "id": 802,
+      "main": "Clouds",
+      "description": "scattered clouds",
+      "icon": "03n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 295.37,
+    "pressure": 1014,
+    "humidity": 49,
+    "temp_min": 293.15,
+    "temp_max": 296.15
+  },
+  "visibility": 16093,
+  "wind": {
+    "speed": 5.1,
+    "deg": 180,
+    "gust": 7.2
+  },
+  "clouds": {
+    "all": 40
+  },
+  "dt": 1528851300,
+  "sys": {
+    "type": 1,
+    "id": 2137,
+    "message": 0.0044,
+    "country": "US",
+    "sunrise": 1528881883,
+    "sunset": 1528937093
+  },
+  "id": 5140405,
+  "name": "Syracuse",
+  "cod": 200
+}
