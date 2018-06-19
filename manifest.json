@@ -6,7 +6,7 @@
     "newtab": "UpstateTab.html"
   },
   "content_scripts": [{
-    "js":["jquery-3.3.1.min.js", "weather.js", "clock.js", "uptodate.js", windowResize.js],
+    "js":["jquery-3.3.1.min.js", "weather.js", "clock.js", "uptodate.js"],
     "matches": [ "http://*/*", "https://*/*"]
     }],
   "icons": {"128": "img/upstate_seal.png"}
