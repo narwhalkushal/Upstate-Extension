@@ -104,6 +104,8 @@ input {
 }
 .btn-icon {
   width: 90px;
+  height: 90px;
+  background-color: white;
   border: solid #fff;
   border-width: 3px;
   position: relative;
@@ -122,10 +124,12 @@ input {
 
 .buttonRow {
   width: 100%;
+  height: 100%;
   float: left;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: white;
 }
 
 .clock {
@@ -194,8 +198,10 @@ input {
   width: 50%;
   float: right;
   display: flex;
+  height: auto;
   justify-content: space-between;
   margin-left: 2.5px;
+  height: 100%;
 }
 .vert {
   flex-direction: column;
