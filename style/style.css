@@ -95,9 +95,9 @@ body {
   content: url('../img/uptodate.png');
 }*/
 
-.search-query::before {
+/*.search-query::before {
   content: url('../img/uptodate.png')
-}
+}*/
 .search-query {
   background-image: url('../img/uptodate.png');
   background-position: left;
