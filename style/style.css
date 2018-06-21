@@ -4,6 +4,13 @@
 
 /*Main Document Settings and Variables*/
 
+:root {
+  --maxwidth: 600px;
+  --iconwidth: 90px;
+  --borderwidth: 3px;
+  --headerheight: 120px;
+}
+
 * {
   border-radius: 5px;
   color: white;
@@ -16,13 +23,17 @@ body {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-}
-:root {
-  --maxwidth: 600px;
-  --iconwidth: 90px;
-  --borderwidth: 3px;
+  max-width: var(--maxwidth);
+  min-width: var(--minwidth);
+  /*margin-bottom: 5px;*/
 }
 
+.header-pane, input {
+  /*max-width: var(--maxwidth);*/
+  /*width: 100%;*/
+  /*min-width: var(--minwidth);*/
+  /*margin-bottom: 5px;*/
+}
 /*Class Files*/
 
 .header-pane {
@@ -33,6 +44,8 @@ body {
   background-color: rgba(78, 181, 241, .7);
   margin-left: 50%;
   transform: translateX(-50%);
+  height: auto;
+  width: 100%;
 }
 
 .row-distribution {
@@ -44,17 +57,33 @@ body {
   align-items: center;
 }
 
+.column-distribution {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .upstate-seal {
-  height: 100%;
-  background: white;
-  /*width: 70px;
-  background-image: url('../img/upstate-seal.png');
-  background-size: 70px;
-  background-repeat: no-repeat;
-  display: inline-flex;
-  /*margin: 2vw;*/
-  /*float: left;
-  display: flex;*/*/
+  content: url('../img/upstate-seal.png');
+  display: block;
+  float: left;
+  margin: 10px;
+  height: 90px;
+}
+
+/* Javascript HTML Values */
+
+#clockVals {
+  font-size: 50px;
+}
+
+#dateVals {
+  font-size: 35px;
+  margin: 0;
+  padding-bottom: 6px;
+  padding-top: -6px;
 }
 
 #showTemp {
@@ -64,6 +93,26 @@ body {
 #showDesc {
   font-size: 30px;
   text-transform: capitalize;
+}
+
+/* Search Input */
+.search-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.logo-placement {
+  background-image: url('../img/uptodate.png');
+  background-color: white;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
+  margin-bottom: 0px;
+  width: 100%;
 }
 
 input {
@@ -88,15 +137,6 @@ input {
   height: 100%;
 }
 
-.logo_placement {
-  background-image: url('../img/uptodate.png');
-  background-color: white;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-position: 10px;
-  background-size: 28px;
-  margin-bottom: 0px;
-}
 @media screen and (min-width: 600px) {
   .upstate-logo-left {
     .upstate-logo-small {display: none};
@@ -114,12 +154,7 @@ input {
   font-size: 20px;
   margin: 0;
 }
-.searchForm {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
+
 .weather-row {
   float: left;
   display: flex;
@@ -139,12 +174,7 @@ input {
   text-align: center;
 }
 
-.header-pane, input {
-  max-width: var(--maxwidth);
-  width: 100%;
-  min-width: var(--minwidth);
-  margin-bottom: 5px;
-}
+
 
 .buttonRow {
   width: 100%;
@@ -153,24 +183,6 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-/*.container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  vertical-align: middle;
-}*/
-
-#clockVals {
-  font-size: 50px;
-}
-
-#dateVals {
-  font-size: 35px;
-  margin: 0;
-  padding-bottom: 6px;
-  padding-top: -6px;
 }
 
 #wicon {
