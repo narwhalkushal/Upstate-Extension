@@ -2,7 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100);
 
-/*Global Settings*/
+/*Main Document Settings and Variables*/
 
 * {
   border-radius: 5px;
@@ -22,6 +22,41 @@ body {
   --iconwidth: 90px;
   --borderwidth: 3px;
 }
+
+/*Class Files*/
+
+.header-pane {
+  margin-top: 30px;
+  border: 3px solid #FFFFFF;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: rgba(78, 181, 241, .7);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.row-distribution {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.upstate-seal {
+  height: 100%;
+  background: white;
+  /*width: 70px;
+  background-image: url('../img/upstate-seal.png');
+  background-size: 70px;
+  background-repeat: no-repeat;
+  display: inline-flex;
+  /*margin: 2vw;*/
+  /*float: left;
+  display: flex;*/*/
+}
+
 #showTemp {
   font-size: 75px;
 }
@@ -43,7 +78,6 @@ input {
   justify-content: center;
   align-items: center;
   padding: 0.2em 1.2em;
-  border: 3px solid #FFFFFF;
   box-sizing: border-box;
   text-decoration: none;
   color: #FFFFFF;
@@ -75,17 +109,7 @@ input {
   background-image: url('../img/upstate_seal.png');
   display: none;
 }
-.upstate-logo-left {
-  height: 70px;
-  width: 70px;
-  background-image: url('../img/upstate_seal.png');
-  background-size: 70px;
-  background-repeat: no-repeat;
-  margin: 2vw;
-  float: left;
-  display: block;
-  display: hidden;
-}
+
 .upstate-weather {
   font-size: 20px;
   margin: 0;
@@ -115,7 +139,7 @@ input {
   text-align: center;
 }
 
-.clock, input {
+.header-pane, input {
   max-width: var(--maxwidth);
   width: 100%;
   min-width: var(--minwidth);
@@ -129,22 +153,6 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.clock {
-  margin-top: 30px;
-  border: 3px solid #FFFFFF;
-  box-sizing: border-box;
-  text-decoration: none;
-  background: rgba(78, 181, 241, .7);
-  margin-left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  vertical-align: middle;
-  align-items: center;
-  flex-direction: row;
 }
 /*.container {
   display: flex;

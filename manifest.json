@@ -6,8 +6,8 @@
     "newtab": "index.html"
   },
   "content_scripts": [{
-    "js":["js/jquery-3.3.1.min.js", "js/weather.js", "js/clock.js", "js/uptodate.js"],
+    "js":["js/weather.js", "js/clock.js", "js/uptodate.js"],
     "matches": [ "https://*/*"]
     }],
-  "icons": {"128": "img/upstate_seal.png"}
+  "icons": {"128": "img/upstate-seal.png"}
 }
