@@ -91,9 +91,8 @@ body {
   margin-bottom: 5px;
 }
 
-.logo-placement {
+.search-query {
   background-image: url('../img/uptodate.png');
-  background-color: white;
   background-position: left;
   background-repeat: no-repeat;
   background-position: 10px;
