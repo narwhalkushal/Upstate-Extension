@@ -86,11 +86,18 @@ body {
 }
 
 /* Search Input */
+
 .search-form {
   width: 100%;
   margin-bottom: 5px;
 }
+/*.search-icon {
+  content: url('../img/uptodate.png');
+}*/
 
+.search-query::before {
+  content: url('../img/uptodate.png')
+}
 .search-query {
   background-image: url('../img/uptodate.png');
   background-position: left;
