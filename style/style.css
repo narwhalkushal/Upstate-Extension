@@ -24,16 +24,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   max-width: var(--maxwidth);
-  min-width: var(--minwidth);
   /*margin-bottom: 5px;*/
 }
 
-.header-pane, input {
-  /*max-width: var(--maxwidth);*/
-  /*width: 100%;*/
-  /*min-width: var(--minwidth);*/
-  /*margin-bottom: 5px;*/
-}
 /*Class Files*/
 
 .header-pane {
@@ -42,10 +35,14 @@ body {
   box-sizing: border-box;
   text-decoration: none;
   background-color: rgba(78, 181, 241, .7);
-  margin-left: 50%;
-  transform: translateX(-50%);
-  height: auto;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-left: 50%;
+  transform: translateX(50%);*/
+  /*height: auto;*/
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 .row-distribution {
