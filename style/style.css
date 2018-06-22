@@ -41,9 +41,11 @@ body {
 
 .row-distribution {
   display: flex;
-  float: left;
+  float: right;
+  align: justify;
   flex-direction: row;
   justify-content: space-between;
+  /*align-items: center;*/
 }
 
 .column-distribution {
@@ -161,6 +163,7 @@ body {
   padding: 0.2em 1.2em;
   text-decoration: none;
   color: white;
+  margin-bottom: 5px;
 }
 .upstate-logo-small {
   height: 10px;
@@ -182,13 +185,10 @@ body {
 }
 
 .btn-icon {
-  width: 90px;
-  height: 90px;
   background-color: white;
   border: solid #fff;
   border-width: 3px;
   position: relative;
-  margin: 0;
 }
 
 .showWeatherIcon {
