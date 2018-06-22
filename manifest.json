@@ -6,7 +6,7 @@
     "newtab": "index.html"
   },
   "content_scripts": [{
-    "js":["js/weather.js", "js/clock.js", "js/uptodate.js"],
+    "js":["js/weather.js", "js/clock.js", "js/uptodate.js", "js/height.js"],
     "matches": [ "https://*/*"]
     }],
   "icons": {"16": "img/upstate-seal16.png",
