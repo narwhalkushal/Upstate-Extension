@@ -9,5 +9,7 @@
     "js":["js/weather.js", "js/clock.js", "js/uptodate.js"],
     "matches": [ "https://*/*"]
     }],
-  "icons": {"128": "img/upstate-seal.png"}
+  "icons": {"16": "img/upstate-seal16.png",
+            "48": "img/upstate-seal48.png",
+            "128": "img/upstate-seal.png"}
 }

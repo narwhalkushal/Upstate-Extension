@@ -1,7 +1,6 @@
 /*Import Files*/
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100);
-
 /*Main Document Settings and Variables*/
 
 :root {
@@ -16,6 +15,8 @@
   color: white;
   font-family: 'Lato';
   font-weight: 1000;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 body {
@@ -30,12 +31,11 @@ body {
 /*Class Files*/
 
 .header-pane {
-  margin-top: 30px;
   border: 3px solid white;
   background-color: rgba(78, 181, 241, .7);
   width: 100%;
+  margin-top: 30px;
   margin-bottom: 5px;
-  box-sizing: border-box;
 }
 
 .row-distribution {
@@ -93,40 +93,103 @@ body {
 }
 
 .search-query {
+  width: 100%;
+  border: 3px solid rgb(78, 181, 241);
+  text-indent: 8px;
+  font-size: 20px;
+  color: black;
+  padding: 12px 10px 12px 40px;
+}
+.search-query:focus {
+  outline: none;
+}
+
+.uptodate-icon {
   background-image: url('../img/uptodate.png');
   background-position: left;
   background-repeat: no-repeat;
   background-position: 10px;
   background-size: 28px;
-  margin-bottom: 0px;
-  width: 100%;
-  text-indent: 8px;
 }
 
-.weatherPane {
+/* Link Buttons */
+
+.container {
   width: 100%;
-  position: relative;
+  max-height: 270px;
+  min-height: 200px;
+  /*height: 100%;*/
+  /*margin-top: 0;*/
+}
+
+
+.link-btn {
+  width: 100%;
+  display: block;
+  padding: 0.5em 0em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  border: 3px solid white;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  transition: all .25s;
+  background: rgb(78, 181, 241, .7)
+}
+
+.link-btn:hover {
+  color: rgb(78, 181, 241);
+  border: 3px solid rgb(78, 181, 241);
+  border-radius: 2em;
+  background-color: white;
+}
+
+.left-column {
+  display: inline;
+  width: 50%;
+}
+
+.right-column {
+  /*margin-left: 2.5px;*/
+  display: inline;
+  width: 50%;
+}
+
+.weather-pane {
+  width: 100%;
+  height: 70px;
+  background-color: rgba(78, 181, 241, .7);
+  border: 3px solid white;
+}
+/*
+.weatherPane {
+  width: 100%;*/
+  /*position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.2em 1.2em;
-  box-sizing: border-box;
+  vertical-align: middle;*/
+  /*padding: 0.2em 1.2em;
   text-decoration: none;
   color: #FFFFFF;
-  text-align: center;
   background: rgba(78, 181, 241, .7);
-  margin-left: 50%;
-  transform: translateX(-50%);
   height: 100%;
-}
+}*/
 
 @media screen and (min-width: 600px) {
   .upstate-logo-left {
-    .upstate-logo-small {display: none};
-    .upstate-logo-left {display: none};
+    .upstate-logo-small {
+      display: none
+    }
+    ;
+    .upstate-logo-left {
+      display: none
+    }
+    ;
   }
 }
+
 .upstate-logo-small {
   height: 10px;
   width: 19px;
@@ -145,6 +208,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+
 .btn-icon {
   width: 90px;
   height: 90px;
@@ -154,6 +218,7 @@ body {
   position: relative;
   margin: 0;
 }
+
 .showWeatherIcon {
   text-align: center;
 }
@@ -171,21 +236,6 @@ body {
   width: 150px;
 }
 
-.container {
-  width: 100%;
-  max-height: 270px;
-  min-height: 200px;
-  height: 100%;
-}
-
-.leftColumn {
-  width: 50%;
-  float: left;
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  margin-right: 2.5px;
-}
 .rightColumnHoriz {
   width: 50%;
   float: right;
@@ -195,9 +245,11 @@ body {
   margin-left: 2.5px;
   height: 100%;
 }
+
 .vert {
   flex-direction: column;
 }
+
 .rightColumn {
   width: 50%;
   height: 100%;
@@ -205,9 +257,11 @@ body {
   float: right;
   margin-left: 2.5px;
 }
+
 .horiz {
   /*flex-direction: row;*/
 }
+
 .namecredits {
   position: absolute;
   bottom: 8px;
@@ -215,41 +269,4 @@ body {
   font-size: 18px;
   color: #474646;
   font-weight: 1000;
-}
-
-.link-btn {
-  width: 100%;
-  display: inline-block;
-  padding: 0.5em 0em;
-  border: 3px solid #FFFFFF;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-size: 20px;
-  text-align: center;
-  transition: all 0.1s;
-  background: rgb(78, 181, 241, .7)
-}
-
-.link-btn:hover {
-  color: rgb(78, 181, 241);
-  border: 3px solid rgb(78, 181, 241);
-  border-radius: 2em;
-  background-color: #FFFFFF
-}
-@media all and (max-width:30em) {
-  .link-btn {
-    display: block;
-    /*margin: 100px auto;*/
-  }
-}
-input[type=text] {
-  box-sizing: border-box;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
-  color: black;
-  background-repeat: no-repeat;
-  border: 3px solid rgb(78, 181, 241);
-  padding: 12px 10px 12px 40px;
-  min-width: 300px;
 }
