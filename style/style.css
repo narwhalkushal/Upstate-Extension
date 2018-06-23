@@ -42,6 +42,7 @@ body {
 .row-distribution {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .column-distribution {
@@ -59,8 +60,15 @@ body {
   float: left;
   margin: 10px;
   height: 90px;
+  background-color: white;
 }
-
+.upstate-seal2 {
+  content: url('../img/upstate-seal.png');
+  display: block;
+  float: left;
+  margin: 0;
+  height: 90px;
+}
 /* Javascript HTML Values */
 
 #clock-value {
@@ -118,10 +126,8 @@ body {
 .container {
   width: 100%;
   height: auto;
-  display: block;
   float: left;
   margin-bottom: 5px;
-  background: white;
 }
 
 .link-btn {
@@ -147,14 +153,13 @@ body {
 }
 
 .left-column {
-  width: calc(50% - .5*var(--elementspacing));
   float: left;
-  background-color: blue;
+  height: auto;
 }
 
 .right-column {
-  width: calc(50% - .5*var(--elementspacing));
   float: right;
+  height: auto;
 }
 
 .weather-pane {
@@ -180,41 +185,32 @@ body {
 .btn-icon {
   display: block;
   float: left;
-  /*height: 90px;*/
-  margin: 0;
-  /*border: solid black;
+  margin-left: 0;
+  border: solid white;
   border-width: 3px;
-  height: 70px;
-  width: 70px;*/
 }
-.logo {
-  width: 70px;
-  height: 70px;
+.facebook {
+  content: url('../img/facebook.png')
+}
+.gmail {
+  content: url('../img/gmail.png')
+}
+.netflix {
+  content: url('../img/netflix.png')
+}
+.youtube {
+  content: url('../img/youtube.png')
+}
+.npr {
+  content: url('../img/npr.png')
+}
+.groupme {
+  content: url('../img/groupme.png')
 }
 
 .weather-icon {
   text-align: center;
   display: block;
-}
-
-.button-row {
-  /*width: 100%;*/
-  /*width: 50%;*/
-  /*height: 70px;*/
-  background-color: white;
-  margin: 0;
-}
-
-.rightColumn {
-  width: 50%;
-  height: 100%;
-  display: table;
-  float: right;
-  margin-left: 2.5px;
-}
-
-.horiz {
-  /*flex-direction: row;*/
 }
 
 .namecredits {
