@@ -52,6 +52,7 @@ body {
   flex-direction: column;
   align-items: center;
   align-content: space-between;
+  text-align: center;
 }
 
 .upstate-seal {
@@ -61,13 +62,7 @@ body {
   margin: 10px;
   height: 90px;
 }
-.upstate-seal2 {
-  content: url('../img/upstate-seal.png');
-  display: block;
-  float: left;
-  margin: 0;
-  height: 90px;
-}
+
 /* Javascript HTML Values */
 
 #clock-value {
@@ -173,12 +168,6 @@ body {
   text-decoration: none;
   color: white;
 }
-.upstate-logo-small {
-  height: 10px;
-  width: 19px;
-  background-image: url('../img/upstate_seal.png');
-  display: none;
-}
 
 .weather-info {
   font-size: 26px;
@@ -186,13 +175,90 @@ body {
 }
 
 .btn-icon {
-  display: inline-block;
+  display: block;
   border: solid white;
   border-width: 3px;
   float: left;
   margin: 0;
 }
+.btn-icon:hover {
+  transform:scale(1.05);
+}
+.con {
+  width: 90px;
+}
 
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.con:hover .overlay {
+  opacity: .5;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.con {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.con:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
 .facebook {
   content: url('../img/facebook.png');
 }
