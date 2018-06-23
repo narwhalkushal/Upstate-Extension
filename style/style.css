@@ -4,11 +4,11 @@
 /*Main Document Settings and Variables*/
 
 :root {
-  --maxwidth: 600px;
+  --maxwidth: 625px;
   --iconwidth: 90px;
   --borderwidth: 3px;
   --headerheight: 120px;
-  --elementspacing: 20px;
+  --elementspacing: 5px;
 }
 
 * {
@@ -37,14 +37,12 @@ body {
   width: 100%;
   margin-top: 30px;
   margin-bottom: var(--elementspacing);
-  float: left;
-  display: inline-block;
 }
 
 .row-distribution {
   display: flex;
   justify-content: space-between;
-  margin: 0;
+  /*text-align: justify;*/
 }
 
 .column-distribution {
@@ -62,15 +60,13 @@ body {
   float: left;
   margin: 10px;
   height: 90px;
-  background-color: white;
 }
 .upstate-seal2 {
   content: url('../img/upstate-seal.png');
   display: block;
   float: left;
   margin: 0;
-  /*height: 90px;*/
-  margin-right: none;
+  height: 90px;
 }
 /* Javascript HTML Values */
 
@@ -127,10 +123,10 @@ body {
 /* Link Buttons */
 
 .container {
-  width: 100%;
   height: auto;
+  width: 100%;
   float: left;
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 
 .link-btn {
@@ -156,18 +152,21 @@ body {
 
 .left-column {
   float: left;
+  width: 100%;
   height: auto;
-  background-color: blue;
-  margin-right: 0;
+  margin: 0;
 }
 
 .right-column {
-  float: right;
+  width: 100%;
+  float: left;
   height: auto;
+  margin: 0;
 }
 
 .weather-pane {
   width: 100%;
+  height: 100%;
   background-color: rgba(78, 181, 241, .7);
   border: 3px solid white;
   padding: .8em 1.2em;
@@ -187,13 +186,15 @@ body {
 }
 
 .btn-icon {
-  display: block;
+  display: inline-block;
   border: solid white;
   border-width: 3px;
-  margin-right: 0;
+  float: left;
+  margin: 0;
 }
+
 .facebook {
-  content: url('../img/facebook.png')
+  content: url('../img/facebook.png');
 }
 .gmail {
   content: url('../img/gmail.png')
