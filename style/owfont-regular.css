@@ -41,8 +41,14 @@
 .owf-5x {
   font-size: 5em;
 }
+.owf-8x {
+  font-size: 8em;
+}
 .owf-10x {
   font-size: 10em;
+}
+.owf-20x {
+  font-size: 20em;
 }
 .owf-fw {
   width: 1.28571429em;

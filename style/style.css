@@ -41,21 +41,18 @@ body {
 
 .row-distribution {
   display: flex;
-  float: right;
-  align: justify;
-  flex-direction: row;
   justify-content: space-between;
-  /*align-items: center;*/
+  flex-direction: row;
+  align-items: center;
+
 }
 
 .column-distribution {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   flex-direction: column;
-  text-align: center;
-  vertical-align: middle;
-  float: left;
-  justify-content: center;
+  align-items: center;
+
 }
 
 .upstate-seal {
@@ -68,26 +65,27 @@ body {
 
 /* Javascript HTML Values */
 
-#clockVals {
+#clock-value {
   font-size: 50px;
 }
 
-#dateVals {
+#date-value {
   font-size: 35px;
   margin: 0;
   padding-bottom: 6px;
   padding-top: -6px;
 }
 
-#showTemp {
+#temp-value {
   font-size: 75px;
   float: left;
 }
 
-#showDesc {
+#weather-desc {
   font-size: 30px;
   display: block;
   text-transform: capitalize;
+  margin-bottom: 7px;
 }
 
 /* Search Input */
@@ -129,14 +127,14 @@ body {
   display: block;
   padding: 0.5em 0em;
   margin-top: 0;
-  margin-bottom: var(--elementspacing);
+  /*margin-bottom: var(--elementspacing);*/
   border: 3px solid white;
   text-decoration: none;
   font-size: 20px;
   text-align: center;
   transition: all .25s;
   background: rgb(78, 181, 241, .7);
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .link-btn:hover {
@@ -163,7 +161,6 @@ body {
   padding: 0.2em 1.2em;
   text-decoration: none;
   color: white;
-  margin-bottom: 5px;
 }
 .upstate-logo-small {
   height: 10px;
@@ -191,18 +188,19 @@ body {
   position: relative;
 }
 
-.showWeatherIcon {
+.weather-icon {
   text-align: center;
   display: block;
 }
 
-.buttonRow {
+.button-row {
   width: 100%;
-  height: 100%;
-  float: left;
+  height: 90px;
+  /*float: left;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between;*/
+  background-color: white;
 }
 
 .rightColumnHoriz {

@@ -28,8 +28,8 @@ window.onload = (function showTime(){
 
     var time = h + ":" + m + ":" + s + ampm;
 
-    document.getElementById("clockVals").innerHTML = time;
-    document.getElementById("dateVals").innerHTML = dateString;
+    document.getElementById("clock-value").innerHTML = time;
+    document.getElementById("date-value").innerHTML = dateString;
 
     setTimeout(showTime, 1000);
 });

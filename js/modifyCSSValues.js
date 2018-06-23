@@ -4,10 +4,13 @@ $(document).ready(function modifyCSSvalues() {
   var elementSpacing = getComputedStyle(document.body);
   elementSpacing = elementSpacing.getPropertyValue('--elementspacing');
   elementSpacing = parseInt(elementSpacing.replace(/px/, ""));
-  var divHeight = $('.left-column').outerHeight();
+  var divHeight = $('.link-btn').outerHeight();
 
-  var finalHeight = divHeight - elementSpacing;
-  $('.weather-pane').outerHeight(finalHeight);
+  $('.left-column').outerHeight((5*divHeight + 4*elementSpacing))
+
+  var leftHeight = $('.left-column').outerHeight();
+  // var finalHeight = divHeight - elementSpacing;
+  $('.weather-pane').outerHeight(leftHeight);
 
   var buttonSpacing = $('.left-column').outerWidth();
   var buttonWidth = (buttonSpacing - 2*elementSpacing)/3;
