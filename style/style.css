@@ -41,9 +41,7 @@ body {
 
 .row-distribution {
   display: flex;
-  float: left;
   justify-content: space-between;
-  flex-direction: row;
 }
 
 .column-distribution {
@@ -123,6 +121,7 @@ body {
   display: block;
   float: left;
   margin-bottom: 5px;
+  background: white;
 }
 
 .link-btn {
@@ -150,6 +149,7 @@ body {
 .left-column {
   width: calc(50% - .5*var(--elementspacing));
   float: left;
+  background-color: blue;
 }
 
 .right-column {
@@ -177,17 +177,19 @@ body {
   float: left;
 }
 
-.weather-row {
-  float: left;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .btn-icon {
-  border: solid black;
-  border-width: 3px;
+  display: block;
+  float: left;
+  /*height: 90px;*/
   margin: 0;
+  /*border: solid black;
+  border-width: 3px;
+  height: 70px;
+  width: 70px;*/
+}
+.logo {
+  width: 70px;
+  height: 70px;
 }
 
 .weather-icon {
@@ -201,20 +203,6 @@ body {
   /*height: 70px;*/
   background-color: white;
   margin: 0;
-}
-
-.rightColumnHoriz {
-  width: 50%;
-  float: right;
-  display: flex;
-  height: auto;
-  justify-content: space-between;
-  margin-left: 2.5px;
-  height: 100%;
-}
-
-.vert {
-  flex-direction: column;
 }
 
 .rightColumn {

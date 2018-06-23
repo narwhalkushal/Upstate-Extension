@@ -12,12 +12,16 @@ $(document).ready(function modifyCSSvalues() {
   // var finalHeight = divHeight - elementSpacing;
   $('.weather-pane').outerHeight(leftHeight);
 
-  var buttonSpacing = $('.container').outerWidth();
+  var buttonSpacing = $('.header-pane').outerWidth();
   var buttonWidth = (buttonSpacing-5*elementSpacing)/6;
   $('.btn-icon').outerWidth(buttonWidth);
   $('.btn-icon').outerHeight(buttonWidth);
   console.log($('.container').outerWidth())
-  console.log($('.btn-icon').outerWidth())
+  console.log($('.left-column').outerWidth())
+
+  // var left = $(".link-btn").offset().left;
+  // $('.btn-icon').css('right', elementSpacing);
+
 
 
 });
