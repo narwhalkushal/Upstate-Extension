@@ -28,6 +28,7 @@ $(document).ready(function modifyCSSvalues() {
   console.log(elementSpacing)
   console.log($('.left-column').outerWidth())
   console.log($('.right-column').outerWidth())
+  console.log($('.btn-icon').outerWidth());
 
   // var left = $(".link-btn").offset().left;
   // $('.btn-icon').css('right', elementSpacing);

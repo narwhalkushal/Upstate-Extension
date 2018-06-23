@@ -8,7 +8,7 @@
   --iconwidth: 90px;
   --borderwidth: 3px;
   --headerheight: 120px;
-  --elementspacing: 5px;
+  --elementspacing: 20px;
 }
 
 * {
@@ -37,6 +37,8 @@ body {
   width: 100%;
   margin-top: 30px;
   margin-bottom: var(--elementspacing);
+  float: left;
+  display: inline-block;
 }
 
 .row-distribution {
@@ -128,8 +130,7 @@ body {
   width: 100%;
   height: auto;
   float: left;
-  margin-bottom: 5px;
-  background-color: red;
+  margin-bottom: 5px
 }
 
 .link-btn {
@@ -157,6 +158,7 @@ body {
   float: left;
   height: auto;
   background-color: blue;
+  margin-right: 0;
 }
 
 .right-column {
@@ -189,7 +191,6 @@ body {
   border: solid white;
   border-width: 3px;
   margin-right: 0;
-  margin-left: 0;
 }
 .facebook {
   content: url('../img/facebook.png')
