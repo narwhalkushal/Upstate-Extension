@@ -42,7 +42,7 @@ body {
 .row-distribution {
   display: flex;
   justify-content: space-between;
-  margin-right: 0;
+  margin: 0;
 }
 
 .column-distribution {
@@ -129,6 +129,7 @@ body {
   height: auto;
   float: left;
   margin-bottom: 5px;
+  background-color: red;
 }
 
 .link-btn {
@@ -156,7 +157,6 @@ body {
   float: left;
   height: auto;
   background-color: blue;
-  margin-right: 0;
 }
 
 .right-column {
@@ -189,6 +189,7 @@ body {
   border: solid white;
   border-width: 3px;
   margin-right: 0;
+  margin-left: 0;
 }
 .facebook {
   content: url('../img/facebook.png')
