@@ -41,18 +41,18 @@ body {
 
 .row-distribution {
   display: flex;
+  float: left;
   justify-content: space-between;
   flex-direction: row;
-  align-items: center;
-
 }
 
 .column-distribution {
   display: flex;
+  float: left;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-
+  align-content: space-between;
 }
 
 .upstate-seal {
@@ -119,7 +119,10 @@ body {
 
 .container {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
+  float: left;
+  margin-bottom: 5px;
 }
 
 .link-btn {
@@ -158,7 +161,7 @@ body {
   width: 100%;
   background-color: rgba(78, 181, 241, .7);
   border: 3px solid white;
-  padding: 0.2em 1.2em;
+  padding: .8em 1.2em;
   text-decoration: none;
   color: white;
 }
@@ -182,10 +185,9 @@ body {
 }
 
 .btn-icon {
-  background-color: white;
-  border: solid #fff;
+  border: solid black;
   border-width: 3px;
-  position: relative;
+  margin: 0;
 }
 
 .weather-icon {
@@ -194,13 +196,11 @@ body {
 }
 
 .button-row {
-  width: 100%;
-  height: 90px;
-  /*float: left;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;*/
+  /*width: 100%;*/
+  /*width: 50%;*/
+  /*height: 70px;*/
   background-color: white;
+  margin: 0;
 }
 
 .rightColumnHoriz {
