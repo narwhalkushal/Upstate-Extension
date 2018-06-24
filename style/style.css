@@ -294,10 +294,8 @@ body {
   /*right: 8px;*/
   font-size: 15px;
   color: #474646;
-  font-weight: bold;
   text-decoration: none;
   text-align: right;
-  /*left: 50px;*/
   right: 8px;
   bottom: 8px;
 }
@@ -329,5 +327,8 @@ body {
 .circle:hover .name {
   color: white;
   /*color: rgba(78, 181, 241);*/
+  font-weight: bold;
+}
+.circle:hover .namecredits {
   font-weight: bold;
 }
