@@ -8,5 +8,8 @@ Chrome new-tab extension built for SUNY Upstate Students
   * Current Syracuse weather and descriptions
   * UpToDate search that works off-campus
 
-### Loading Screen Preview
+### Main Screen
+![Main Preview](/img/main-screen.png)
+
+### Loading Screen
 ![Loading Preview](img/loading-preview.png)
