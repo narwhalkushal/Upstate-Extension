@@ -43,25 +43,33 @@ body {
   height: 100%;
   width: 100%;
 }
-
 #status {
   /*content: url('../img/pizza.gif');*/
   /*content: url('../img/medical.gif');*/
   /*content: url('../img/paper-airplane.gif');*/
+  display: none;
   content: url('../img/fire.gif');
   position: absolute;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  margin-left: calc(50% - .5*300px);
-  margin-top: calc(50% - .5*300px);
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  left: 50%;
+  bottom: 35%;
+  transform: translateX(-50%);
 }
 
 .loading-text {
-  text-align: center;
-  vertical-align: middle;
+  position: absolute;
+  /*text-align: center;*/
+  /*vertical-align: middle;*/
   font-size: 35px;
-  margin-top: 165px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /*Class Files*/
