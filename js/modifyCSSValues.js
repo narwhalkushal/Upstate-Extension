@@ -23,6 +23,7 @@ $(window).bind("load resize", function modifyCSSvalues() {
   $('.upstate-seal').outerHeight(buttonWidth);
   $('.btn-icon').outerWidth(buttonWidth);
   $('.btn-icon').outerHeight(buttonWidth);
+  $('#weather-desc').css('font-size', 25+"px");
 
   // $('#clock-value').css('font-size', 50);
 
@@ -30,7 +31,6 @@ $(window).bind("load resize", function modifyCSSvalues() {
     $('#clock-value').css('font-size', 40+ "px");
     $('#date-value').css('font-size', 35 +"px");
     $('#temp-value').css('font-size', 45+"px");
-    $('#weather-desc').css('font-size', 25+"px");
   } else {
     $('#clock-value').css('font-size', 50);
     $('#date-value').css('font-size', 35);
@@ -39,9 +39,7 @@ $(window).bind("load resize", function modifyCSSvalues() {
 
   if (headerWidth < 570) {
     $('.weather-icon').css('font-size', 75+"px");
-    $('#weather-desc').css('font-size', 25+"px");
   } else {
     $('.weather-icon').css('font-size', 85);
-    $('#weather-desc').css('font-size', 35);
   }
 });
