@@ -12,4 +12,4 @@ Chrome new-tab extension built for SUNY Upstate Students
 ![Main Preview](/img/main-screen.png)
 
 ### Loading Screen
-![Loading Preview](img/loading-preview.png)
+![Loading Preview](img/load-screen.png)

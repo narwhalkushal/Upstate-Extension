@@ -10,6 +10,7 @@
   --headerheight: 120px;
   --elementspacing: 5px;
 }
+
 * {
   border-radius: 5px;
   color: white;
@@ -19,6 +20,7 @@
   margin: 0 auto;
   transition: all 0.2s;
 }
+
 body {
   background-image: url("../img/weiskotten.jpg");
   background-position: 50% 50%;
@@ -29,38 +31,39 @@ body {
 }
 
 /* Preloader */
-#preloader  {
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background-color: rgb(55,  70, 92);
-     z-index: 99;
-    height: 100%;
-    width: 100%;
- }
-#status  {
-  content: url('../img/pizza.gif');
-    /*content: url('../img/medical.gif');*/
-    /*content: url('../img/birds.gif');*/
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    text-align: center;
-    top: 50%-250px;
-    left: 50%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
+
+#preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(24, 25, 27);
+  z-index: 99;
+  height: 100%;
+  width: 100%;
 }
+
+#status {
+  /*content: url('../img/pizza.gif');*/
+  /*content: url('../img/medical.gif');*/
+  /*content: url('../img/paper-airplane.gif');*/
+  content: url('../img/fire.gif');
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  margin-left: calc(50% - .5*300px);
+  margin-top: calc(50% - .5*300px);
+}
+
 .loading-text {
   text-align: center;
   vertical-align: middle;
   font-size: 35px;
-  margin-top: 18%;
-
+  margin-top: 165px;
 }
+
 /*Class Files*/
 
 .header-pane {
@@ -85,6 +88,7 @@ body {
   /*align-content: space-between;*/
   text-align: center;
 }
+
 .time-panel {
   display: flex;
   float: left;
@@ -228,12 +232,15 @@ body {
 .facebook {
   content: url('../img/facebook.png');
 }
+
 .facebook:hover {
   border-radius: 10px;
 }
+
 .gmail {
   content: url('../img/gmail.png');
 }
+
 .gmail:hover {
   border-radius: 10px;
 }
@@ -241,6 +248,7 @@ body {
 .netflix {
   content: url('../img/netflix.png');
 }
+
 .netflix:hover {
   border-radius: 10px;
 }
@@ -248,6 +256,7 @@ body {
 .youtube {
   content: url('../img/youtube.png');
 }
+
 .youtube:hover {
   border-radius: 10px;
 }
@@ -255,6 +264,7 @@ body {
 .npr {
   content: url('../img/npr.png');
 }
+
 .npr:hover {
   border-radius: 10px;
 }
@@ -262,6 +272,7 @@ body {
 .groupme {
   content: url('../img/groupme.png');
 }
+
 .groupme:hover {
   border-radius: 10px;
 }
@@ -271,6 +282,7 @@ body {
   display: block;
   /*transition: all 0.5s linear;*/
 }
+
 .weather-icon:hover {
   position: relative;
   transform: scale(1.1);
@@ -279,9 +291,43 @@ body {
 
 .namecredits {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
-  font-size: 18px;
+  /*right: 8px;*/
+  font-size: 15px;
   color: #474646;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: right;
+  /*left: 50px;*/
+  right: 8px;
+  bottom: 8px;
+}
+
+.name {
+  font-size: 20px;
+  color: rgba(78, 181, 241);
+}
+
+.circle {
+  position: absolute;
+  border-radius: 180px 0 0 0;
+  width: 150px;
+  height: 63px;
+  transition: all .2s linear;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border-left: 3px solid rgba(78, 181, 241);
+  border-top: 3px solid rgba(78, 181, 241);
+}
+
+.circle:hover {
+  background-color: rgba(78, 181, 241);
+  border-left: 3px solid white;
+  border-top: 3px solid white;
+}
+
+.circle:hover .name {
+  color: white;
+  /*color: rgba(78, 181, 241);*/
   font-weight: bold;
 }
