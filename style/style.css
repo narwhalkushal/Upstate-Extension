@@ -35,28 +35,29 @@ body {
      left: 0;
      right: 0;
      bottom: 0;
-     background-color: rgb(164, 86, 87);
+     background-color: rgb(117, 195, 200);
      z-index: 99;
     height: 100%;
     width: 100%;
  }
 #status  {
   /*content: url('../img/pizza.gif');*/
-    content: url('../img/paper-airplane.gif');
+    content: url('../img/medical.gif');
     /*display: none;*/
     position: absolute;
-    height:50%;
-    width: 50%;
+    /*height:66.7%;*/
+    width: 66.7%;
+    height: 50%;
     margin: 0 auto;
     top: 50%;
-    left: 25%;
+    left: 16.7%;
     transform: translateY(-50%);
 }
 .loading-text {
   text-align: center;
   vertical-align: middle;
   font-size: 35px;
-  margin-top: 20%;
+  margin-top: 18%;
 
 }
 /*Class Files*/
@@ -220,30 +221,48 @@ body {
 
 .btn-icon:hover {
   border-color: rgba(78, 181, 241);
+  border-radius: 10px;
 }
 
 .facebook {
   content: url('../img/facebook.png');
 }
-
+.facebook:hover {
+  border-radius: 10px;
+}
 .gmail {
   content: url('../img/gmail.png');
+}
+.gmail:hover {
+  border-radius: 10px;
 }
 
 .netflix {
   content: url('../img/netflix.png');
 }
+.netflix:hover {
+  border-radius: 10px;
+}
 
 .youtube {
   content: url('../img/youtube.png');
+}
+.youtube:hover {
+  border-radius: 10px;
 }
 
 .npr {
   content: url('../img/npr.png');
 }
+.npr:hover {
+  border-radius: 10px;
+}
 
 .groupme {
   content: url('../img/groupme.png');
+}
+.groupme:hover {
+  border-radius: 10px;
 }
 
 .weather-icon {
