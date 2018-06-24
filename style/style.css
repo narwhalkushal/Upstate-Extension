@@ -10,7 +10,6 @@
   --headerheight: 120px;
   --elementspacing: 5px;
 }
-
 * {
   border-radius: 5px;
   color: white;
@@ -18,8 +17,8 @@
   font-weight: 1000;
   box-sizing: border-box;
   margin: 0 auto;
+  transition: all 0.2s;
 }
-
 body {
   background-image: url("../img/weiskotten.jpg");
   background-position: 50% 50%;
@@ -29,6 +28,37 @@ body {
   margin: 0 auto;
 }
 
+/* Preloader */
+#preloader  {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgb(164, 86, 87);
+     z-index: 99;
+    height: 100%;
+    width: 100%;
+ }
+#status  {
+  /*content: url('../img/pizza.gif');*/
+    content: url('../img/paper-airplane.gif');
+    /*display: none;*/
+    position: absolute;
+    height:50%;
+    width: 50%;
+    margin: 0 auto;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+}
+.loading-text {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 35px;
+  margin-top: 20%;
+
+}
 /*Class Files*/
 
 .header-pane {
@@ -42,7 +72,6 @@ body {
 .row-distribution {
   display: flex;
   justify-content: space-between;
-  /*text-align: justify;*/
 }
 
 .column-distribution {
@@ -50,8 +79,17 @@ body {
   float: left;
   justify-content: space-between;
   flex-direction: column;
-  align-items: center;
-  align-content: space-between;
+  /*align-items: center;*/
+  /*align-content: space-between;*/
+  text-align: center;
+}
+.time-panel {
+  display: flex;
+  float: left;
+  justify-content: center;
+  flex-direction: column;
+  /*align-items: center;*/
+  /*align-content: space-between;*/
   text-align: center;
 }
 
@@ -60,29 +98,26 @@ body {
   display: block;
   float: left;
   margin: 10px;
-  height: 90px;
 }
 
 /* Javascript HTML Values */
 
 #clock-value {
-  font-size: 50px;
+  /*font-size: 50px;*/
 }
 
 #date-value {
-  font-size: 35px;
+  /*font-size: 35px;*/
   margin: 0;
   padding-bottom: 6px;
   padding-top: -6px;
 }
 
 #temp-value {
-  font-size: 75px;
   float: left;
 }
 
 #weather-desc {
-  font-size: 30px;
   display: block;
   text-transform: capitalize;
   margin-bottom: 7px;
@@ -103,6 +138,7 @@ body {
   color: black;
   padding: 12px 10px 12px 40px;
 }
+
 .search-query:focus {
   outline: none;
 }
@@ -133,7 +169,6 @@ body {
   text-decoration: none;
   font-size: 20px;
   text-align: center;
-  transition: all .25s;
   background: rgb(78, 181, 241, .7);
   font-size: 20px;
 }
@@ -180,107 +215,46 @@ body {
   border-width: 3px;
   float: left;
   margin: 0;
+  padding: 0;
 }
+
 .btn-icon:hover {
-  transform:scale(1.05);
-}
-.con {
-  width: 90px;
+  border-color: rgba(78, 181, 241);
 }
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-
-.con:hover .overlay {
-  opacity: .5;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-.con {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-
-.con:hover .overlay {
-  opacity: 1;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
 .facebook {
   content: url('../img/facebook.png');
 }
+
 .gmail {
-  content: url('../img/gmail.png')
+  content: url('../img/gmail.png');
 }
+
 .netflix {
-  content: url('../img/netflix.png')
+  content: url('../img/netflix.png');
 }
+
 .youtube {
-  content: url('../img/youtube.png')
+  content: url('../img/youtube.png');
 }
+
 .npr {
-  content: url('../img/npr.png')
+  content: url('../img/npr.png');
 }
+
 .groupme {
-  content: url('../img/groupme.png')
+  content: url('../img/groupme.png');
 }
 
 .weather-icon {
   text-align: center;
   display: block;
+  /*transition: all 0.5s linear;*/
+}
+.weather-icon:hover {
+  position: relative;
+  transform: scale(1.1);
+  /*top: -5px;*/
 }
 
 .namecredits {
@@ -289,5 +263,5 @@ body {
   right: 8px;
   font-size: 18px;
   color: #474646;
-  font-weight: 1000;
+  font-weight: bold;
 }

@@ -6,12 +6,15 @@
   <link rel="shortcut icon" type="image/x-icon" href="img/upstate_seal.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AccessUpstate </title>
-</head>
-
 <body>
+  <div id="preloader">
+  <div id="status">&nbsp;</div>
+  <div class="loading-text"> AccessUpstate Loading...</div>
+</div>
+<div class="all-elements">
   <div class="header-pane row-distribution">
     <div class="upstate-seal"></div>
-    <div class="column-distribution">
+    <div class="time-panel">
       <div id="clock-value"></div>
       <div id="date-value"></div>
     </div>
@@ -43,22 +46,33 @@
   </div>
   <div class="container">
     <div class="row-distribution">
-      <div class="con"><a href="https://facebook.com" class="btn-icon facebook">
-      <div class="overlay"> <div class="text">Facebook</div></div></a></div>
-      <!-- <a href="https://gmail.com" class="btn-icon gmail"></a>
+      <a href="https://facebook.com" class="btn-icon facebook"></a>
+      <a href="https://gmail.com" class="btn-icon gmail"></a>
       <a href="https://netflix.com" class="btn-icon netflix"></a>
       <a href="https://youtube.com" class="btn-icon youtube"></a>
       <a href="https://npr.org" class="btn-icon npr"></a>
-      <a href="https://groupme.com" class="btn-icon groupme"></a> -->
+      <a href="https://groupme.com" class="btn-icon groupme"></a>
     </div>
   </div>
+  <div class="view">
+  <div class="plane main">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</div>
+</div>
   <div class="namecredits"> Developed By: Zach Visco </div>
   <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/preloader.js"></script>
+  <script src="js/modifyCSSvalues.js"></script>
   <script type="text/javascript" src="js/weather.js"></script>
   <script src="js/weather.js"></script>
   <script src="js/clock.js"></script>
   <script src="js/uptodate.js"></script>
-  <script src="js/modifyCSSvalues.js"></script>
 </body>
 
 </html>

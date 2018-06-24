@@ -6,7 +6,7 @@
     "newtab": "index.html"
   },
   "content_scripts": [{
-    "js":["js/weather.js", "js/clock.js", "js/uptodate.js", "js/modifyCSSvalues.js"],
+    "js":["js/preloader.js", "js/modifyCSSvalues.js", "js/weather.js", "js/clock.js", "js/uptodate.js"],
     "matches": [ "https://*/*"]
     }],
   "browser_action" : {
