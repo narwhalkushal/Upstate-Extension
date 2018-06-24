@@ -47,7 +47,6 @@ body {
   /*content: url('../img/pizza.gif');*/
   /*content: url('../img/medical.gif');*/
   /*content: url('../img/paper-airplane.gif');*/
-  display: none;
   content: url('../img/fire.gif');
   position: absolute;
   width: 450px;
