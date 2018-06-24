@@ -35,23 +35,24 @@ body {
      left: 0;
      right: 0;
      bottom: 0;
-     background-color: rgb(117, 195, 200);
+     background-color: rgb(55,  70, 92);
      z-index: 99;
     height: 100%;
     width: 100%;
  }
 #status  {
-  /*content: url('../img/pizza.gif');*/
-    content: url('../img/medical.gif');
-    /*display: none;*/
+  content: url('../img/pizza.gif');
+    /*content: url('../img/medical.gif');*/
+    /*content: url('../img/birds.gif');*/
     position: absolute;
-    /*height:66.7%;*/
-    width: 66.7%;
-    height: 50%;
+    width: 300px;
+    height: 300px;
     margin: 0 auto;
-    top: 50%;
-    left: 16.7%;
+    text-align: center;
+    top: 50%-250px;
+    left: 50%;
     transform: translateY(-50%);
+    transform: translateX(-50%);
 }
 .loading-text {
   text-align: center;
