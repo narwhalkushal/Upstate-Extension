@@ -7,3 +7,6 @@ Chrome new-tab extension built for SUNY Upstate Students
   * Shortcuts to commonly used social media sites
   * Current Syracuse weather and descriptions
   * UpToDate search that works off-campus
+
+### Loading Screen Preview
+![Loading Preview](img/loading-preview.png)
