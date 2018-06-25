@@ -221,6 +221,14 @@ body {
   font-size: 26px;
   float: left;
 }
+hr {
+  display: block;
+  width: 95%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-style: inset;
+  border-width: 2px;
+}
 
 .btn-icon {
   display: block;
