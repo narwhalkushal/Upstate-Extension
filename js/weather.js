@@ -1,62 +1,61 @@
 $(document).ready(function() {
-    $('#weather-desc main').html('Weather Data Loading...');
-    $.ajax({
-      url: `https://api.openweathermap.org/data/2.5/forecast?q=Syracuse&appid=11adcfe70b89b2df10b3fcb71b8f2a89`,
-      type: 'GET',
-      data: {
-      format: 'json'
-    },
 
-      success: function(response) {
+    var cityName = 'Syracuse';
+    var weatherJSON = ajaxWeather(cityName);
+    // var weatherData = parseWeatherData(weatherJSON);
+    // writeHTML(weatherData);
+});
 
-        var tempVals = tempData(response);
-        $('#temp').html(tempVals[0]);
-        $('#min-temp').html(tempVals[1]);
-        $('#max-temp').html(tempVals[2]);
-        $('#weather-desc').html(response.list[0].weather[0].description);
-
-        var weatherID = response.list[0].weather[0].id;
-        var dayOrNight = response.list[0].weather[0].icon[2];
-
-        dayOrNight = (dayOrNight == 'd') ? "day": "night";
-
-        var iconString = '<i class="wi wi-owm-'+ dayOrNight + '-' + weatherID + ' icon-color"></i>';
-        $(".weather-icon").html(iconString);
-
-        var currTime = new Date();
-
-        for (i = 1; i < 5; i++) {
-          // getWeatherData(i, response);
-        }
-      },
-      error: function() {
-        $('.errors').text("There was an error processing your request. Please try again later.")
-      }
-    });
-  });
-// });
-
-function tempData(jsonFile) {
-  var temp = Math.round((jsonFile.list[0].main.temp - 273)*9/5 + 32) + "&deg" + "F";
-  var minTemp = Math.round((jsonFile.list[0].main.temp_min - 273)*9/5 + 32) + "&deg" + "F";
-  var maxTemp = Math.round((jsonFile.list[0].main.temp_max - 273)*9/5 + 32) + "&deg" + "F";
-
-  return [temp, minTemp, maxTemp];
+function ajaxInterface(jsonFile) {
+    var weatherData = parseWeatherData(jsonFile, 0);
+    writeHTML(weatherData);
 }
 
-function getWeatherData(timepoint, response) {
-  var tempValueString = '#temp-value-' + timepoint;
-  var weatherDescString = '#weather-desc' + timepoint;
-  var currTimeString = '#time-val' + timepoint;
+function writeHTML(weatherData) {
+    $('#weather-desc main').html('Weather Data Loading...');
 
-  // var utc = currTime.getTime() + (utc.getTimezoneOffset()*60000);
-  // var nd = new Date(utc + (360000*-4));
-  // var currTime = response.list[0].dt_txt;
-  // console.log(currTime);
+    $('#temp').html(weatherData[0]);
+    $('#min-temp').html(weatherData[1]);
+    $('#max-temp').html(weatherData[2]);
+    $('#weather-desc').html(weatherData[3]);
+    $('.weather-icon').html(weatherData[4]);
+}
 
-  var temp = Math.round((response.list[timepoint].main.temp - 273)*9/5 + 32) + "&deg" + "F";
-  var weatherID = response.list[timepoint].weather[0].id;
-  var dayOrNight = response.list[timepoint].weather[0].icon[2];
+function ajaxWeather(cityName) {
 
-  $(tempValueString).html(temp);
+    var APIKey = '11adcfe70b89b2df10b3fcb71b8f2a89';
+    var searchURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + APIKey;
+    var weatherJSON;
+    $.ajax({url: searchURL,
+        type: 'GET',
+        data: {format: 'json'},
+
+        success: function(response) {
+            ajaxInterface(response);
+        },
+        error: function() {
+            $('.errors').text("There was an error processing your request. Please try again later.")
+        }
+    });
+}
+
+function parseWeatherData(jsonFile, index) {
+
+  var temp = convertTempValue(jsonFile.list[index].main.temp);
+  var minTemp = convertTempValue(jsonFile.list[index].main.temp_min);
+  var maxTemp = convertTempValue(jsonFile.list[index].main.temp_max);
+  var weatherDesc = jsonFile.list[index].weather[0].description
+  var dayOrNight = jsonFile.list[index].weather[0].icon[2];
+  var weatherID = jsonFile.list[index].weather[0].id;
+
+  dayOrNight = (dayOrNight == 'd') ? 'day' : 'night';
+
+  var iconString = '<i class="wi wi-owm-'+ dayOrNight + '-' + weatherID + ' icon-color"></i>';
+
+  return [temp, minTemp, maxTemp, weatherDesc, iconString];
+}
+
+function convertTempValue(temp) {
+  temp = Math.round((temp - 273)*9/5 + 32) + "&deg" + "F";
+  return temp;
 }

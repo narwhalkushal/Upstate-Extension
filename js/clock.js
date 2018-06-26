@@ -15,7 +15,6 @@ window.onload = (function showTime(){
     const monthNamesAbbr = ["Jan", "Feb", "Mar", "Apr", "May", "June",
     "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
-
     mon = monthNames[mon];
 
     var dateString = mon + " " + d + ", " + y;
@@ -28,8 +27,8 @@ window.onload = (function showTime(){
 
     var time = h + ":" + m + ":" + s + ampm;
 
-    document.getElementById("clock-value").innerHTML = time;
-    document.getElementById("date-value").innerHTML = dateString;
+    $('#clock-value').html(time);
+    $('#date-value').html(dateString);
 
     setTimeout(showTime, 1000);
 });

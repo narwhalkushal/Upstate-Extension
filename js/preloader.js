@@ -7,6 +7,7 @@ $(window).ready( function() {
   } else {
     $('#preloader').css('font-size', '35px');
   }
+
   $("#status").delay(600).fadeOut('slow');
 
   // will fade out the whole DIV that covers the website.
