@@ -1,25 +1,8 @@
 $(document).ready(function() {
 
-    var cityName = 'Syracuse';
-    var weatherJSON = ajaxWeather(cityName);
-    // var weatherData = parseWeatherData(weatherJSON);
-    // writeHTML(weatherData);
+    ajaxWeather('Syracuse');
+
 });
-
-function ajaxInterface(jsonFile) {
-    var weatherData = parseWeatherData(jsonFile, 0);
-    writeHTML(weatherData);
-}
-
-function writeHTML(weatherData) {
-    $('#weather-desc main').html('Weather Data Loading...');
-
-    $('#temp').html(weatherData[0]);
-    $('#min-temp').html(weatherData[1]);
-    $('#max-temp').html(weatherData[2]);
-    $('#weather-desc').html(weatherData[3]);
-    $('.weather-icon').html(weatherData[4]);
-}
 
 function ajaxWeather(cityName) {
 
@@ -37,6 +20,21 @@ function ajaxWeather(cityName) {
             $('.errors').text("There was an error processing your request. Please try again later.")
         }
     });
+}
+
+function ajaxInterface(jsonFile) {
+    var weatherData = parseWeatherData(jsonFile, 0);
+    writeHTML(weatherData);
+}
+
+function writeHTML(weatherData) {
+    $('#weather-desc main').html('Weather Data Loading...');
+
+    $('#temp').html(weatherData[0]);
+    $('#min-temp').html(weatherData[1]);
+    $('#max-temp').html(weatherData[2]);
+    $('#weather-desc').html(weatherData[3]);
+    $('.weather-icon').html(weatherData[4]);
 }
 
 function parseWeatherData(jsonFile, index) {
