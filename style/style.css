@@ -9,6 +9,8 @@
   --borderwidth: 3px;
   --headerheight: 120px;
   --elementspacing: 5px;
+  --main-color: rgba(78,181,241);
+  --main-color-opaque: rgba(78,181,241,.7);
 }
 
 * {
@@ -75,7 +77,7 @@ body {
 
 .header-pane {
   border: 3px solid white;
-  background-color: rgba(78, 181, 241, .7);
+  background-color: var(--main-color-opaque);
   width: 100%;
   margin-top: 30px;
   margin-bottom: var(--elementspacing);
@@ -91,8 +93,6 @@ body {
   float: left;
   justify-content: space-between;
   flex-direction: column;
-  /*align-items: center;*/
-  /*align-content: space-between;*/
   text-align: center;
 }
 
@@ -101,8 +101,6 @@ body {
   float: left;
   justify-content: center;
   flex-direction: column;
-  /*align-items: center;*/
-  /*align-content: space-between;*/
   text-align: center;
 }
 
@@ -145,7 +143,7 @@ body {
 
 .search-query {
   width: 100%;
-  border: 3px solid rgb(78, 181, 241);
+  border: 3px solid var(--main-color);
   text-indent: 8px;
   font-size: 20px;
   color: black;
@@ -182,13 +180,13 @@ body {
   text-decoration: none;
   font-size: 20px;
   text-align: center;
-  background: rgb(78, 181, 241, .7);
+  background: var(--main-color-opaque);
   font-size: 20px;
 }
 
 .link-btn:hover {
-  color: rgb(78, 181, 241);
-  border: 3px solid rgb(78, 181, 241);
+  color: var(--main-color);
+  border: 3px solid var(--main-color);
   border-radius: 2em;
   background-color: white;
 }
@@ -210,7 +208,7 @@ body {
 .weather-pane {
   width: 100%;
   height: 100%;
-  background-color: rgba(78, 181, 241, .7);
+  background-color: var(--main-color-opaque);
   border: 3px solid white;
   padding: .8em 1.2em;
   text-decoration: none;
@@ -240,7 +238,7 @@ hr {
 }
 
 .btn-icon:hover {
-  border-color: rgba(78, 181, 241);
+  border-color: var(--main-color);
   border-radius: 10px;
 }
 
@@ -294,23 +292,28 @@ hr {
 
 .weather-icon {
   text-align: center;
-  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
   /*transition: all 0.5s linear;*/
 }
+.icon-color {
+  color: rgb(27, 35, 78);
+}
 
-.weather-icon:hover {
+/*.weather-icon:hover {
   position: relative;
   transform: scale(1.1);
   /*top: -5px;*/
-}
+
 
 .namecredits {
-  position: absolute;
+  position: relative;
   /*right: 8px;*/
   font-size: 15px;
   color: #474646;
   text-decoration: none;
   text-align: right;
+  bottom-margin: 0;
   right: 8px;
   bottom: 8px;
 }
@@ -321,20 +324,21 @@ hr {
 }
 
 .circle {
-  position: absolute;
+  position: relative;
   border-radius: 180px 0 0 0;
   width: 150px;
   height: 63px;
   transition: all .2s linear;
+  margin-bottom: 0;
   right: 0;
   bottom: 0;
   background-color: white;
-  border-left: 3px solid rgba(78, 181, 241);
-  border-top: 3px solid rgba(78, 181, 241);
+  border-left: 3px solid var(--main-color);
+  border-top: 3px solid var(--main-color);
 }
 
 .circle:hover {
-  background-color: rgba(78, 181, 241);
+  background-color: var(--main-color);
   border-left: 3px solid white;
   border-top: 3px solid white;
 }

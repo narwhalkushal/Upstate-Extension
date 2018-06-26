@@ -28,18 +28,20 @@ $(window).bind("load resize", function modifyCSSvalues() {
   // $('#clock-value').css('font-size', 50);
 
   if (headerWidth < 480) {
+
     $('#clock-value').css('font-size', 40+ "px");
     $('#date-value').css('font-size', 35 +"px");
-    $('#temp-value').css('font-size', 45+"px");
+    $('#temp').css('font-size', 45+"px");
   } else {
     $('#clock-value').css('font-size', 50);
     $('#date-value').css('font-size', 35);
-    $('#temp-value').css('font-size', 75);
+    $('#temp').css('font-size', 75);
   }
 
   if (headerWidth < 570) {
-    $('.weather-icon').css('font-size', 75+"px");
+    $('.weather-icon').css('font-size', "110%");
   } else {
-    $('.weather-icon').css('font-size', 85);
+    var weatherWidth = $('.weather-pane').outerWidth();
+    $('.weather-icon').css('font-size', .1*weatherWidth);
   }
 });
