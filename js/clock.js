@@ -32,3 +32,16 @@ window.onload = (function showTime(){
 
     setTimeout(showTime, 1000);
 });
+
+function convertTimeValues(hour) {
+
+    hour = (hour > 24) ? hour - 24 : hour;
+    var ampm = (hour < 12) ? " AM" : " PM";
+
+    hour = (hour > 12) ? hour - 12 : hour;
+    hour = (hour == 0) ? 12 : hour;
+    hour = (hour < 10) ? "0" + hour : hour;
+    hour = hour + ampm;
+
+    return hour;
+}
