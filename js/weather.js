@@ -55,7 +55,7 @@ function ajaxForecastInterface(jsonFile) {
 function fillForecastHTML(forecastData, hours) {
     for (var index = startIndex; index < lastIndex; index++) {
         $('.weather-time.' + index).html(hours[index]);
-        $('.temp.' + index).html(forecastData[0][index]);
+        $('.forecast-temp.' + index).html(forecastData[0][index]);
         $('.weather-icon-small.' + index).html(forecastData[4][index]);
     }
     console.log(forecastData);
@@ -103,16 +103,15 @@ function writeForecastHTML() {
     var str = "<div class='row-distribution'>";
 
     for (index = startIndex; index < lastIndex; index++) {
-        str = str + "<div class='column-distribution'>";
+        str = str + "<div class='column-distribution style='height:100%''>";
         str = str + "<div class='weather-time " + index + "'></div>";
-        str = str + "<div class='temp " + index + "'></div>";
         str = str + "<div class='weather-icon-small " + index + "'></div>";
+        str = str + "<div class='forecast-temp " + index + "'></div>";
         str = str + "</div>";
     }
     str = str + "</div>";
     $('.forecast-data').append(str);
-    console.log(str)
-
+    console.log(str);
 }
 
 function writeWeatherHTML(weatherData) {

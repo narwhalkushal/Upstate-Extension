@@ -42,6 +42,6 @@ $(window).bind("load resize", function modifyCSSvalues() {
   } else {
     var weatherWidth = $('.weather-pane').outerWidth();
     $('.weather-icon').css('font-size', 40);
-    // $('.weather-icon-small').css('font-size', 30);
+    $('.weather-icon-small').css('font-size', 40);
   }
 });
