@@ -86,6 +86,8 @@ body {
 .row-distribution {
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  width: 100%;
 }
 
 .column-distribution {
@@ -222,8 +224,8 @@ body {
 hr {
   display: block;
   width: 95%;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
   border-style: inset;
   border-width: 2px;
 }
@@ -300,22 +302,15 @@ hr {
   color: rgb(27, 35, 78);
 }
 
-/*.weather-icon:hover {
+.name-credits {
   position: relative;
-  transform: scale(1.1);
-  /*top: -5px;*/
-
-
-.namecredits {
-  position: relative;
-  /*right: 8px;*/
   font-size: 15px;
   color: #474646;
   text-decoration: none;
   text-align: right;
-  bottom-margin: 0;
-  right: 8px;
-  bottom: 8px;
+  left: 45px;
+  top: 10px;
+
 }
 
 .name {
@@ -323,12 +318,11 @@ hr {
   color: rgba(78, 181, 241);
 }
 
-.circle {
-  position: relative;
-  border-radius: 180px 0 0 0;
+.name-box {
+  position: absolute;
+  border-radius: 50px 0 0 0;
   width: 150px;
-  height: 63px;
-  transition: all .2s linear;
+  height: 65px;
   margin-bottom: 0;
   right: 0;
   bottom: 0;
@@ -337,17 +331,19 @@ hr {
   border-top: 3px solid var(--main-color);
 }
 
-.circle:hover {
+.name-box:hover .name-credits {
+  font-weight: bold;
+}
+
+.name-box:hover {
   background-color: var(--main-color);
   border-left: 3px solid white;
   border-top: 3px solid white;
+  width: 300px;
 }
 
-.circle:hover .name {
+.name-box:hover .name {
   color: white;
   /*color: rgba(78, 181, 241);*/
-  font-weight: bold;
-}
-.circle:hover .namecredits {
   font-weight: bold;
 }

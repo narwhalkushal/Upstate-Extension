@@ -56,7 +56,7 @@ function fillForecastHTML(forecastData, hours) {
     for (var index = startIndex; index < lastIndex; index++) {
         $('.weather-time.' + index).html(hours[index]);
         $('.temp.' + index).html(forecastData[0][index]);
-        $('.weather-icon.' + index).html(forecastData[4][index]);
+        $('.weather-icon-small.' + index).html(forecastData[4][index]);
     }
     console.log(forecastData);
 }
@@ -106,11 +106,12 @@ function writeForecastHTML() {
         str = str + "<div class='column-distribution'>";
         str = str + "<div class='weather-time " + index + "'></div>";
         str = str + "<div class='temp " + index + "'></div>";
-        str = str + "<div class='weather-icon " + index + "'></div>";
+        str = str + "<div class='weather-icon-small " + index + "'></div>";
         str = str + "</div>";
     }
     str = str + "</div>";
     $('.forecast-data').append(str);
+    console.log(str)
 
 }
 
@@ -121,6 +122,7 @@ function writeWeatherHTML(weatherData) {
     $('#max-temp').html(weatherData[2]);
     $('#weather-desc').html(weatherData[3]);
     $('.weather-icon').html(weatherData[4]);
+    console.log(weatherData[3])
 }
 
 function convertTempValue(temp) {
