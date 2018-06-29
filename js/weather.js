@@ -25,6 +25,7 @@ function ajaxWeather(cityName) {
         },
         error: function() {
             $('.errors').text("There was an error processing your request. Please try again later.")
+            $('.divider').text("");
         }
     });
 
@@ -35,7 +36,7 @@ function ajaxWeather(cityName) {
             ajaxForecastInterface(response);
         },
         error: function() {
-            $('.errors').text('Data not loaded.');
+            // $('.errors').text('Data not loaded.');
         }
     });
 }

@@ -1,13 +1,20 @@
-window.onload = (function showTime(){
-    var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
-    var ampm = (h < 12) ? " AM" : " PM";
+$(document).ready( function() {
 
-    var y = date.getFullYear(); //
+    showTime();
+
+})
+
+
+function showTime(){
+    var date = new Date();
+    var hour = date.getHours(); // 0 - 23
+    var min = date.getMinutes(); // 0 - 59
+    var sec = date.getSeconds(); // 0 - 59
+    var ampm = (hour < 12) ? " AM" : " PM";
+
+    var year = date.getFullYear(); //
     var mon = date.getMonth(); // 0 - 11
-    var d = date.getDate(); // 0 - 31
+    var day = date.getDate(); // 0 - 31
 
     const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
@@ -17,20 +24,20 @@ window.onload = (function showTime(){
 
     mon = monthNames[mon];
 
-    var dateString = mon + " " + d + ", " + y;
+    var dateString = mon + " " + day + ", " + year;
 
-    h = (h > 12) ? h - 12 : h;
-    h = (h == 0 ) ? 12 : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
+    hour = (hour > 12) ? hour - 12 : hour;
+    hour = (hour == 0 ) ? 12 : hour;
+    min = (min < 10) ? "0" + min : min;
+    sec = (sec < 10) ? "0" + sec : sec;
 
-    var time = h + ":" + m + ":" + s + ampm;
+    var time = hour + ":" + min + ":" + sec + ampm;
 
     $('#clock-value').html(time);
     $('#date-value').html(dateString);
 
     setTimeout(showTime, 1000);
-});
+}
 
 function convertTimeValues(hour) {
 
