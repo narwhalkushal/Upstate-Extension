@@ -36,14 +36,20 @@
                 <div class="right-column">
                     <div class="weather-pane column-distribution">
                         <div class="weather-info"> Syracuse Weather </div>
+                        <div class="weather-container">
                         <div class="errors"></div>
                         <div class="row-distribution">
                             <i class="weather-icon"></i>
-                            <div id="temp"></div>
+                            <div class="column-distribution">
+                                <div id="temp"></div>
+                                <div class="row-distribution">
+                                    <div class="max-temp"></div> <span class="divider"> | </span><div class="min-temp"></div>
+                                </div>
+                            </div>
                             <i class="weather-icon"></i>
                         </div>
+                    </div>
                         <div id="weather-desc"></div>
-                        <!-- <span class="up-arrow"> ^ </span> -->
                         <div class="large-container">
                         <a href="#" class="arrow-container">
                             <div class="arrow"></div>
@@ -56,8 +62,9 @@
                             <div class="forecast-data"></div>
                         </div>
                     </div>
+                <!-- </div> -->
                 </div>
-                </div>
+            </div>
             </div>
             <div class="container">
                 <div class="row-distribution">
@@ -71,7 +78,7 @@
             </div>
         </div> -->
         <a href="mailto:zvisco@gmail.com?Subject=Feedback%20on%20AccessUpstate">
-            <div class="name-box"><span class="feedback">Feedback?</span> <span class="name-credits"> Developed By:<br/> <span class="name"> Zach Visco</span></div>
+            <div class="name-box"><span class="feedback">Feedback?</span><span class="name-credits"> Developed By:<br/> <span class="name"> Zach Visco</span></div>
         </a>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/preloader.js"></script>

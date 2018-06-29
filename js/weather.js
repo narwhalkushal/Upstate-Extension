@@ -58,7 +58,6 @@ function fillForecastHTML(forecastData, hours) {
         $('.forecast-temp.' + index).html(forecastData[0][index]);
         $('.weather-icon-small.' + index).html(forecastData[4][index]);
     }
-    console.log(forecastData);
 }
 
 function parseWeatherData(jsonFile, flag) {
@@ -117,11 +116,11 @@ function writeForecastHTML() {
 function writeWeatherHTML(weatherData) {
 
     $('#temp').html(weatherData[0]);
-    $('#min-temp').html(weatherData[1]);
-    $('#max-temp').html(weatherData[2]);
+    $('.min-temp').html(weatherData[1]);
+    $('.max-temp').html(weatherData[2]);
+    // $('.temp-range').html(weatherData[2] + "|" + weatherData[1]);
     $('#weather-desc').html(weatherData[3]);
     $('.weather-icon').html(weatherData[4]);
-    console.log(weatherData[3])
 }
 
 function convertTempValue(temp) {
