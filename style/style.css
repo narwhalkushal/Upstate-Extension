@@ -157,17 +157,29 @@ body {
 #weather-desc {
     display: block;
     text-transform: capitalize;
-    margin-top: auto;
-    margin-bottom: 0;
+    /*margin-top: auto;*/
+    /*margin-bottom: 0;*/
+    font-size: 50px;
 }
-.wind-direc {
-    display: block;
-    font-size: 20px;
+.temp-range {
+    font-size: 16px;
+    font-weight: 700;
 }
 
-.temp-range {
-    font-size: 20px;
-    font-weight: 700;
+.sun-times {
+    display: flex;
+    justify-content: center;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    width: 100%;
+    font-size: 15px;
+    /*padding-top: 10px;*/
+}
+.sunset {
+    /*font-size: 18px;*/
+}
+.sunrise {
+    /*font-size: 18px;*/
 }
 
 /* Search Input */
@@ -191,15 +203,15 @@ body {
 }
 .max-temp {
     display: inline;
-    font-size: 20px;
+    /*font-size: 20px;*/
 }
 .min-temp {
     display: inline;
-    font-size: 20px;
+    /*font-size: 20px;*/
 }
 .divider {
-    font-size: 18px;
-    font-weight: 1000;
+    /*font-size: 18px;*/
+    /*font-weight: 1000;*/
 }
 
 .uptodate-icon {
@@ -280,14 +292,14 @@ body {
     font-size: 26px;
     float: left;
     margin-top: 0;
-    margin-bottom: auto;
+    /*margin-bottom: auto;*/
 }
 
 .horiz-line {
     width: 95%;
     border-top: 3px solid white;
     /*margin-top: -5px;*/
-    margin-top: -15px;
+    /*margin-top: -15px;*/
 }
 .right-column:hover .horiz-line{
     display: block;
@@ -374,8 +386,8 @@ body {
 }
 .weather-container {
     width: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
+    /*margin-top: auto;*/
+    /*margin-bottom: auto;*/
 }
 
 .icon-color {
@@ -435,76 +447,3 @@ body {
     color: white;
     /*font-weight: bold;*/
 }
-
-
-/*html {
-  height: 100%;
-}
-
-body {
-  background: #000;
-  position: relative;
-  height: 100%;
-}*/
-.large-container {
-    width: 100%;
-}
-
-.arrow-container {
-  display: flex;
-  width: 25px;
-  height: 25px;
-  position: relative;
-  margin: 0 auto;
-  justify-content: space-between;
-  align-items: center;
-  /*transform: translate(50%, 50%) rotateZ(0deg);*/
-}
-/*.weather-pane:hover {
-  cursor: pointer;
-}
-.weather-pane:hover .arrow {
-  top: 50%;
-}
-.weather-pane:hover .arrow:before {
-  transform: translate(50%, 50%) rotateZ(-80deg);
-}
-.weather-pane:hover .arrow:after {
-  transform: translate(50%, 50%) rotateZ(80deg);
-*/
-
-.arrow {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transition: all .1s ease;
-}
-/*}
-.arrow:before, .arrow:after {
-  transition: all .1s ease;
-  content: '';
-  display: block;
-  position: absolute;
-  transform-origin: bottom right;
-  background: #fff;
-  width: 4px;
-  height: 20px;
-  border-radius: 10px;
-  transform: translate(50%, 50%) rotateZ(-45deg);
-}
-.arrow:after {
-  transform-origin: bottom left;
-  transform: translate(50%, 50%) rotateZ(45deg);
-}
-.arrow:nth-child(1) {
-  opacity: 0.3;
-  top: 35%;
-}
-.arrow:nth-child(2) {
-  opacity: 0.6;
-  top: 55%;
-}
-.arrow:nth-child(3) {
-  opacity: 0.9;
-  top: 75%;
-}*/

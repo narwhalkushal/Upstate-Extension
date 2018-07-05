@@ -31,22 +31,23 @@ function ajaxWeather(latitude, longitude) {
         }
     });
 
-    // $.ajax({url: forecastURL,
-    //     type: 'GET',
-    //     data: {format: 'json'},
-    //     success: function(response) {
-    //         ajaxForecastInterface(response);
-    //     },
-    //     error: function() {
-    //         // $('.errors').text('Data not loaded.');
-    //     }
-    // });
+    $.ajax({url: forecastURL,
+        type: 'GET',
+        data: {format: 'json'},
+        success: function(response) {
+            ajaxForecastInterface(response);
+        },
+        error: function() {
+            // $('.errors').text('Data not loaded.');
+        }
+    });
 }
 
 function ajaxWeatherInterface(jsonFile) {
-    var weatherData = parseWeatherData(jsonFile, 0, 1);
+    var weatherData = parseWeatherData(jsonFile);
     writeWeatherHTML(weatherData);
 }
+
 function ajaxForecastInterface(jsonFile) {
     var forecastData = parseWeatherData(jsonFile, 1);
     var hours = hoursValues(jsonFile);
@@ -63,26 +64,49 @@ function fillForecastHTML(forecastData, hours) {
     }
 }
 
-function parseWeatherData(jsonFile, start, finish) {
+function parseWeatherData(jsonFile, flag) {
 
-    var weatherArray = [];
+    var weatherID = [];
+    var temp = [];
+    var minTemp = [];
+    var maxTemp = [];
+    var weatherDesc = [];
+    var dayOrNight = [];
+    var j;
+    var iconString = [];
+    var windDirec = [];
+    var windSpeed = [];
 
-    for (j = start; j < finish + 1; j++) {
-        console.log('hey')
-        weatherArray['temp'][j] = Math.round(jsonFile.main.temp) + "&deg" + "F";
-        weatherArray['minTemp'][j] = Math.round(jsonFile.main.temp_min) + "&deg" + "F";
-        weatherArray['maxTemp'][j] = Math.round(jsonFile.main.temp_max) + "&deg" + "F";
-        weatherArray['weatherDesc'][j] = jsonFile.weather[0].description;
-        weatherArray['dayOrNight'][j] = jsonFile.weather[0].icon[2];
-        weatherArray['weatherID'][j] = jsonFile.weather[0].id;
-        weatherArray['dayOrNight'][j] = (weatherArray['dayOrNight'] == 'd') ? 'day' : 'night';
-        weatherArray['iconString'][j] = '<i class="wi wi-owm-'+ weatherArray['dayOrNight'] + '-' + weatherArray['weatherID'] + ' icon-color"></i>';
-        weatherArray['windDirec'][j] = windDegreeMask(jsonFile.wind.deg);
-        weatherArray['windSpeed'][j] = jsonFile.wind.speed;
-        console.log('yo')
+    if (!flag) {
+        temp = Math.round(jsonFile.main.temp) + "&degF";
+        minTemp = Math.round(jsonFile.main.temp_min) + "&degF";
+        maxTemp = Math.round(jsonFile.main.temp_max) + "&degF";
+        weatherDesc = jsonFile.weather[0].description;
+        dayOrNight = jsonFile.weather[0].icon[2];
+        weatherID = jsonFile.weather[0].id;
+        dayOrNight = (dayOrNight == 'd') ? 'day' : 'night';
+        iconString = '<i class="wi wi-owm-'+ dayOrNight + '-' + weatherID + ' icon-color"></i>';
+        windDirec = windDegreeMask(jsonFile.wind.deg);
+        windSpeed = jsonFile.wind.speed;
+        // sunrise = convertTimeValues(jsonFile.sys.sunrise);
+        // sunset = convertTimeValues(jsonFile.sys.sunset);
+        sunrise = sunTimes(jsonFile.sys.sunrise);
+        sunset = sunTimes(jsonFile.sys.sunset);
+
+    } else {
+        for (j = startIndex; j < lastIndex; j++) {
+            temp[j] = Math.round(jsonFile.list[j].main.temp) + "&degF";
+            minTemp[j] = Math.round(jsonFile.list[j].main.temp_min) + "&degF";
+            maxTemp[j] = Math.round(jsonFile.list[j].main.temp_max) + "&degF";
+            weatherDesc[j] = jsonFile.list[j].weather[0].description;
+            dayOrNight[j] = jsonFile.list[j].weather[0].icon[2];
+            dayOrNight[j] = (dayOrNight[j] == 'd') ? 'day' : 'night';
+            weatherID[j] = jsonFile.list[j].weather[0].id;
+            iconString[j] = '<i class="wi wi-owm-'+ dayOrNight[j] + '-' + weatherID[j] + ' icon-color"></i>';
+        }
     }
 
-    return weatherArray;
+    return [temp, minTemp, maxTemp, weatherDesc, iconString, windDirec, windSpeed, sunrise, sunset];
 }
 
 function writeForecastHTML() {
@@ -100,14 +124,32 @@ function writeForecastHTML() {
     $('.forecast-data').append(str);
 }
 
-function writeWeatherHTML(weatherArray) {
+function writeWeatherHTML(weatherData) {
 
-    $('#temp').html(weatherArray['temp']);
-    $('.min-temp').html(weatherArray['minTemp']);
-    $('.max-temp').html(weatherArray['maxTemp']);
-    $('#weather-desc').html(weatherArray['weatherDesc']);
-    $('.weather-icon').html(weatherArray['iconString']);
-    $('.wind-direc').html("Wind: " + weatherArray['windSpeed'] + " " + weatherArray['windDirec']);
+    $('#temp').html(weatherData[0]);
+    $('.min-temp').html(weatherData[1]);
+    $('.max-temp').html(weatherData[2]);
+    // $('.temp-range').html(weatherData[2] + "|" + weatherData[1]);
+    $('#weather-desc').html(weatherData[3]);
+    $('.weather-icon').html(weatherData[4]);
+    $('.wind-data').html("Wind: " + weatherData[6] + " " + weatherData[5]);
+    $('.sunrise').html(weatherData[7]);
+    $('.sunset').html(weatherData[8]);
+}
+
+function sunTimes(sunTime) {
+
+    var time = new Date(sunTime*1000);
+    var hour = time.getHours();
+    var min = time.getMinutes();
+    var ampm = (hour < 12) ? " AM" : " PM";
+    hour = (hour > 12) ? hour - 12 : hour;
+    hour = (hour == 0 ) ? 12 : hour;
+    min = (min < 10) ? "0" + min : min;
+
+    var timeVal = hour + ":" + min + ampm;
+
+    return timeVal;
 }
 
 function hoursValues(jsonFile) {
@@ -131,8 +173,6 @@ function hoursValues(jsonFile) {
 function windDegreeMask(degree) {
 
     var direc;
-    console.log(degree)
-
     switch(true) {
         case (degree > 348.75 && degree <= 11.25):
             direc = "N";
@@ -186,7 +226,6 @@ function windDegreeMask(degree) {
             direc = "";
 
     }
-    console.log(direc);
     return direc;
 
 }
