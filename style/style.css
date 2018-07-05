@@ -25,11 +25,14 @@
 
 body {
     background-image: url("../img/weiskotten.jpg");
-    background-position: 50% 50%;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+      -moz-background-size: cover;
     max-width: var(--maxwidth);
     margin: 0 auto;
+    height: 100%;
+
 }
 
 /* Preloader */
@@ -120,15 +123,14 @@ body {
 }
 
 .upstate-seal {
-    content: url('../img/upstate-seal.png');
+    background-image: url('../img/upstate-seal.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
     float: left;
-    height: 100%;
     margin-left: 0;
     margin-right: 0;
     padding: 10px;
-    /*margin-top: auto;*/
-    /*margin-bottom: auto;*/
-    /*margin-left: auto;*/
+    background-origin: content-box;
 }
 
 /* Javascript HTML Values */
@@ -157,6 +159,10 @@ body {
     text-transform: capitalize;
     margin-top: auto;
     margin-bottom: 0;
+}
+.wind-direc {
+    display: block;
+    font-size: 20px;
 }
 
 .temp-range {
@@ -302,7 +308,9 @@ body {
 }
 
 .facebook {
-    content: url('../img/facebook.png');
+    background-image: url('../img/facebook.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .facebook:hover {
@@ -310,7 +318,9 @@ body {
 }
 
 .gmail {
-    content: url('../img/gmail.png');
+    background-image: url('../img/gmail.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .gmail:hover {
@@ -318,7 +328,9 @@ body {
 }
 
 .netflix {
-    content: url('../img/netflix.png');
+    background-image: url('../img/netflix.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .netflix:hover {
@@ -326,7 +338,9 @@ body {
 }
 
 .youtube {
-    content: url('../img/youtube.png');
+    background-image: url('../img/youtube.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .youtube:hover {
@@ -334,7 +348,9 @@ body {
 }
 
 .npr {
-    content: url('../img/npr.png');
+    background-image: url('../img/npr.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .npr:hover {
@@ -342,7 +358,9 @@ body {
 }
 
 .groupme {
-    content: url('../img/groupme.png');
+    background-image: url('../img/groupme.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .groupme:hover {

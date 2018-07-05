@@ -1,17 +1,19 @@
 $(document).ready(function() {
 
-    ajaxWeather('Syracuse');
+    var syracuseLatitude = 43.0403;
+    var syracuseLongitude = -76.1390;
+    ajaxWeather(syracuseLatitude, syracuseLongitude);
 
 });
 
 var startIndex = 0;
 var lastIndex = 4;
 
-function ajaxWeather(cityName) {
+function ajaxWeather(latitude, longitude) {
 
     var APIKey = '11adcfe70b89b2df10b3fcb71b8f2a89';
-    var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey;
-    var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&cnt=5' + '&appid=' + APIKey;
+    var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=imperial' + '&appid=' + APIKey;
+    var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&cnt=5&units=imperial' + '&appid=' + APIKey;
 
     console.log(weatherURL)
     console.log(forecastURL)
@@ -29,20 +31,20 @@ function ajaxWeather(cityName) {
         }
     });
 
-    $.ajax({url: forecastURL,
-        type: 'GET',
-        data: {format: 'json'},
-        success: function(response) {
-            ajaxForecastInterface(response);
-        },
-        error: function() {
-            // $('.errors').text('Data not loaded.');
-        }
-    });
+    // $.ajax({url: forecastURL,
+    //     type: 'GET',
+    //     data: {format: 'json'},
+    //     success: function(response) {
+    //         ajaxForecastInterface(response);
+    //     },
+    //     error: function() {
+    //         // $('.errors').text('Data not loaded.');
+    //     }
+    // });
 }
 
 function ajaxWeatherInterface(jsonFile) {
-    var weatherData = parseWeatherData(jsonFile);
+    var weatherData = parseWeatherData(jsonFile, 0, 1);
     writeWeatherHTML(weatherData);
 }
 function ajaxForecastInterface(jsonFile) {
@@ -61,41 +63,26 @@ function fillForecastHTML(forecastData, hours) {
     }
 }
 
-function parseWeatherData(jsonFile, flag) {
+function parseWeatherData(jsonFile, start, finish) {
 
-    var weatherID = [];
-    var temp = [];
-    var minTemp = [];
-    var maxTemp = [];
-    var weatherDesc = [];
-    var dayOrNight = [];
-    var j;
-    var iconString = [];
+    var weatherArray = [];
 
-    if (!flag) {
-        temp = convertTempValue(jsonFile.main.temp);
-        minTemp = convertTempValue(jsonFile.main.temp_min);
-        maxTemp = convertTempValue(jsonFile.main.temp_max);
-        weatherDesc = jsonFile.weather[0].description;
-        dayOrNight = jsonFile.weather[0].icon[2];
-        weatherID = jsonFile.weather[0].id;
-        dayOrNight = (dayOrNight == 'd') ? 'day' : 'night';
-        iconString = '<i class="wi wi-owm-'+ dayOrNight + '-' + weatherID + ' icon-color"></i>';
-
-    } else {
-        for (j = startIndex; j < lastIndex; j++) {
-            temp[j] = convertTempValue(jsonFile.list[j].main.temp);
-            minTemp[j] = convertTempValue(jsonFile.list[j].main.temp_min);
-            maxTemp[j] = convertTempValue(jsonFile.list[j].main.temp_max);
-            weatherDesc[j] = jsonFile.list[j].weather[0].description;
-            dayOrNight[j] = jsonFile.list[j].weather[0].icon[2];
-            dayOrNight[j] = (dayOrNight[j] == 'd') ? 'day' : 'night';
-            weatherID[j] = jsonFile.list[j].weather[0].id;
-            iconString[j] = '<i class="wi wi-owm-'+ dayOrNight[j] + '-' + weatherID[j] + ' icon-color"></i>';
-        }
+    for (j = start; j < finish + 1; j++) {
+        console.log('hey')
+        weatherArray['temp'][j] = Math.round(jsonFile.main.temp) + "&deg" + "F";
+        weatherArray['minTemp'][j] = Math.round(jsonFile.main.temp_min) + "&deg" + "F";
+        weatherArray['maxTemp'][j] = Math.round(jsonFile.main.temp_max) + "&deg" + "F";
+        weatherArray['weatherDesc'][j] = jsonFile.weather[0].description;
+        weatherArray['dayOrNight'][j] = jsonFile.weather[0].icon[2];
+        weatherArray['weatherID'][j] = jsonFile.weather[0].id;
+        weatherArray['dayOrNight'][j] = (weatherArray['dayOrNight'] == 'd') ? 'day' : 'night';
+        weatherArray['iconString'][j] = '<i class="wi wi-owm-'+ weatherArray['dayOrNight'] + '-' + weatherArray['weatherID'] + ' icon-color"></i>';
+        weatherArray['windDirec'][j] = windDegreeMask(jsonFile.wind.deg);
+        weatherArray['windSpeed'][j] = jsonFile.wind.speed;
+        console.log('yo')
     }
 
-    return [temp, minTemp, maxTemp, weatherDesc, iconString];
+    return weatherArray;
 }
 
 function writeForecastHTML() {
@@ -111,24 +98,17 @@ function writeForecastHTML() {
     }
     str = str + "</div>";
     $('.forecast-data').append(str);
-    console.log(str);
 }
 
-function writeWeatherHTML(weatherData) {
+function writeWeatherHTML(weatherArray) {
 
-    $('#temp').html(weatherData[0]);
-    $('.min-temp').html(weatherData[1]);
-    $('.max-temp').html(weatherData[2]);
-    // $('.temp-range').html(weatherData[2] + "|" + weatherData[1]);
-    $('#weather-desc').html(weatherData[3]);
-    $('.weather-icon').html(weatherData[4]);
+    $('#temp').html(weatherArray['temp']);
+    $('.min-temp').html(weatherArray['minTemp']);
+    $('.max-temp').html(weatherArray['maxTemp']);
+    $('#weather-desc').html(weatherArray['weatherDesc']);
+    $('.weather-icon').html(weatherArray['iconString']);
+    $('.wind-direc').html("Wind: " + weatherArray['windSpeed'] + " " + weatherArray['windDirec']);
 }
-
-function convertTempValue(temp) {
-    temp = Math.round((temp - 273)*9/5 + 32) + "&deg" + "F";
-    return temp;
-}
-
 
 function hoursValues(jsonFile) {
     var dt = jsonFile.list[0].dt;
@@ -146,4 +126,67 @@ function hoursValues(jsonFile) {
     h[3] = convertTimeValues(hStart + 9);
 
     return h;
+}
+
+function windDegreeMask(degree) {
+
+    var direc;
+    console.log(degree)
+
+    switch(true) {
+        case (degree > 348.75 && degree <= 11.25):
+            direc = "N";
+            break;
+        case (degree > 11.25 && degree <= 33.75):
+            direc = "NNE";
+            break;
+        case (degree > 33.75 && degree <= 56.25):
+            direc = "NE";
+            break;
+        case (degree > 56.25 && degree <= 78.75):
+            direc = "ENE";
+            break;
+        case (degree > 78.75 && degree <= 101.25):
+            direc = "E";
+            break;
+        case (degree > 111.25 && degree <= 123.75):
+            direc = "ESE";
+            break;
+        case (degree > 123.75 && degree <= 146.25):
+            direc = "SE";
+            break;
+        case (degree > 146.25 && degree <= 168.75):
+            direc = "SSE";
+            break;
+        case (degree > 168.75 && degree <= 191.25):
+            direc = "S";
+            break;
+        case (degree > 191.25 && degree <= 213.75):
+            direc = "SSW";
+            break;
+        case (degree > 213.75 && degree <= 236.75):
+            direc = "SW";
+            break;
+        case (degree > 236.75 && degree <= 258.75):
+            direc = "WSW";
+            break;
+        case (degree > 258.75 && degree <= 281.25):
+            direc = "W";
+            break;
+        case (degree > 281.25 && degree <= 303.75):
+            direc = "WNW";
+            break;
+        case (degree > 303.75 && degree <= 326.25):
+            direc = "NW";
+            break;
+        case (degree > 326.25 && degree <= 348.75):
+            direc = "NNW";
+            break;
+        default:
+            direc = "";
+
+    }
+    console.log(direc);
+    return direc;
+
 }
