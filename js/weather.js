@@ -78,6 +78,7 @@ function parseWeatherData(jsonFile, flag) {
     var windSpeed = [];
     var sunrise = [];
     var sunset = [];
+    var humidity = [];
 
     if (!flag) {
         temp = Math.round(jsonFile.main.temp) + "&degF";
@@ -94,6 +95,7 @@ function parseWeatherData(jsonFile, flag) {
         // sunset = convertTimeValues(jsonFile.sys.sunset);
         sunrise = sunTimes(jsonFile.sys.sunrise);
         sunset = sunTimes(jsonFile.sys.sunset);
+        humidity = jsonFile.main.humidity;
 
     } else {
         for (j = startIndex; j < lastIndex; j++) {
@@ -108,7 +110,7 @@ function parseWeatherData(jsonFile, flag) {
         }
     }
 
-    return [temp, minTemp, maxTemp, weatherDesc, iconString, windDirec, windSpeed, sunrise, sunset];
+    return [temp, minTemp, maxTemp, weatherDesc, iconString, windDirec, windSpeed, sunrise, sunset, humidity];
 }
 
 function writeForecastHTML() {
@@ -134,9 +136,10 @@ function writeWeatherHTML(weatherData) {
     // $('.temp-range').html(weatherData[2] + "|" + weatherData[1]);
     $('#weather-desc').html(weatherData[3]);
     $('.weather-icon').html(weatherData[4]);
-    $('.wind-data').html("Wind: " + weatherData[6] + " " + weatherData[5]);
+    $('.wind-data').html("Wind: " + Math.round(weatherData[6]) + " mph " + weatherData[5]);
     $('.sunrise').html(weatherData[7]);
     $('.sunset').html(weatherData[8]);
+    $('.humidity').html("Humidity: " + weatherData[9] + "%");
 }
 
 function sunTimes(sunTime) {

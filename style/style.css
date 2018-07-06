@@ -76,10 +76,13 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
-
+#temp {
+    display: inline;
+    font-size: 25px;
+}
 .forecast-data {
-    display: inline-block;
     font-size: 15px;
+    width: 100%;
 }
 
 .forecast-temp {
@@ -87,10 +90,10 @@ body {
 }
 .slider-box {
     height: 100px;
-    width: 100%;
+    width: 95%;
     padding-top: 8px;
     padding-bottom: 8px;
-    overflow-x: hidden;
+    overflow-y: hidden;
     white-space: nowrap;
 }
 
@@ -112,6 +115,10 @@ body {
     float: left;
     width: 100%;
 }
+.inner-liner {
+    width: 100%;
+    height: 100%;
+}
 
 .column-distribution {
     display: flex;
@@ -128,6 +135,16 @@ body {
     flex-direction: column;
     text-align: center;
     margin: 0;
+}
+.extra-data {
+    height: 100%;
+    display: flex;
+    float: left;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 16px;
 }
 
 .upstate-seal {
@@ -165,23 +182,29 @@ body {
 .temp-range {
     font-size: 20px;
     font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
+.temp-container {
+    display: flex;
+    justify-content: center;
+}
 .sun-times {
     font-size: 15px;
     margin-top: auto;
     margin-bottom: auto;
-    display: inline-block;
+    width: 100%;
 }
 .sunset {
-    font-size: 18px;
-    margin-top: 8px;
+    font-size: 15px;
+    margin-top: 20px;
     margin-bottom: 8px;
 }
 .sunrise {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 8px;
-    margin-top: 8px;
+    margin-top: 20px;
 }
 
 /* Search Input */
@@ -204,12 +227,11 @@ body {
     outline: none;
 }
 .max-temp {
-    display: inline;
-    /*font-size: 20px;*/
+    font-size: 16px;
 }
 .min-temp {
     display: inline;
-    /*font-size: 20px;*/
+    font-size: 16px;
 }
 .divider {
     /*font-size: 18px;*/
@@ -289,16 +311,19 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.up-arrow {
-    font-size: 30px;
-}
+
 .weather-info {
-    font-size: 26px;
+    font-size: 30px;
     margin-top: 0;
     margin-bottom: auto;
 }
 
 .horiz-line {
+    width: 95%;
+    border-top: 1px solid white;
+    margin-bottom: 0;
+}
+.horiz-line-thick {
     width: 95%;
     border-top: 3px solid white;
     margin-bottom: 0;
