@@ -76,6 +76,8 @@ function parseWeatherData(jsonFile, flag) {
     var iconString = [];
     var windDirec = [];
     var windSpeed = [];
+    var sunrise = [];
+    var sunset = [];
 
     if (!flag) {
         temp = Math.round(jsonFile.main.temp) + "&degF";

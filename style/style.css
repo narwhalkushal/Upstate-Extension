@@ -78,12 +78,20 @@ body {
 }
 
 .forecast-data {
-    width: 100%;
-    transition: ease-out;
-    font-size: 15px
+    display: inline-block;
+    font-size: 15px;
 }
-.right-column:hover .forecast-data {
-    max-height: 40%;
+
+.forecast-temp {
+    margin-top: 8px;
+}
+.slider-box {
+    height: 100px;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    overflow-x: hidden;
+    white-space: nowrap;
 }
 
 /*Class Files*/
@@ -148,38 +156,32 @@ body {
     font-weight: 300;
 }
 
-#temp-value {
-    float: left;
+#weather-desc {
+    text-transform: capitalize;
+    font-size: 22px;
     margin-top: auto;
     margin-bottom: auto;
 }
-
-#weather-desc {
-    display: block;
-    text-transform: capitalize;
-    /*margin-top: auto;*/
-    /*margin-bottom: 0;*/
-    font-size: 50px;
-}
 .temp-range {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
 }
 
 .sun-times {
-    display: flex;
-    justify-content: center;
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    width: 100%;
     font-size: 15px;
-    /*padding-top: 10px;*/
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
 }
 .sunset {
-    /*font-size: 18px;*/
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 .sunrise {
-    /*font-size: 18px;*/
+    font-size: 18px;
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 /* Search Input */
@@ -265,15 +267,17 @@ body {
     margin: 0;
 }
 
-.forecast-temp {
-    /*font-weight: */
-    margin-top: 8px;
+.weather-time {
     margin-bottom: 8px;
 }
-.weather-time {
-    /*font-weight: 700;*/
-    margin-top: 8px;
-    margin-bottom: 8px;
+.top-box {
+    height: 50%;
+    width: 100%;
+}
+.bottom-box {
+    height: 50%;
+    width: 100%;
+    background-color: black;
 }
 
 .weather-pane {
@@ -281,25 +285,23 @@ body {
     height: 100%;
     background-color: var(--main-color-opaque);
     border: 3px solid white;
-    padding: .8em 1.2em;
     text-decoration: none;
-    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .up-arrow {
     font-size: 30px;
 }
 .weather-info {
     font-size: 26px;
-    float: left;
     margin-top: 0;
-    /*margin-bottom: auto;*/
+    margin-bottom: auto;
 }
 
 .horiz-line {
     width: 95%;
     border-top: 3px solid white;
-    /*margin-top: -5px;*/
-    /*margin-top: -15px;*/
+    margin-bottom: 0;
 }
 .right-column:hover .horiz-line{
     display: block;
@@ -386,8 +388,7 @@ body {
 }
 .weather-container {
     width: 100%;
-    /*margin-top: auto;*/
-    /*margin-bottom: auto;*/
+    height: 50%;
 }
 
 .icon-color {

@@ -25,14 +25,12 @@ function modifyCSSvalues() {
 
     var buttonWidth = (headerWidth - 5 * elementSpacing) / 6;
     $('.upstate-seal').outerWidth($('.upstate-seal').outerHeight());
+    $('.sun-times').outerWidth($('.liner-box').outerWidth());
+    $('.forecast-data').outerWidth($('.liner-box').outerWidth());
 
     $('.btn-icon').outerWidth(buttonWidth);
     $('.btn-icon').outerHeight(buttonWidth);
-    $('#weather-desc').css('font-size', 25 + "px");
-    $('.weather-icon-small').css('font-size', 40);
-    $
-
-    // $('#clock-value').css('font-size', 50);
+    // $('#weather-desc').css('font-size', 25 + "px");
 
     if (headerWidth < 480) {
         $('#clock-value').css('font-size', 40 + "px");
