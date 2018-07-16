@@ -1,5 +1,7 @@
 $(window).bind("load resize", function() {
+
     modifyCSSvalues();
+
 });
 
 function modifyCSSvalues() {
@@ -30,23 +32,43 @@ function modifyCSSvalues() {
 
     $('.btn-icon').outerWidth(buttonWidth);
     $('.btn-icon').outerHeight(buttonWidth);
+
+    // $('#clock-value').flowtype({
+    //     minimum: 100,
+    //     maximum:1000,
+    //     minFont:70,
+    //     maxFont:80
+    // });
+    $('body').flowtype({
+        minimum: 400,
+        maximum: 625
+    });
+    $('#clock-value').flowtype({
+        minimum: 400,
+        maximum: 625,
+        minFont: 20,
+        maxFont: 100
+    });
+
+    console.log('hey')
+
     // $('#weather-desc').css('font-size', 25 + "px");
 
-    if (headerWidth < 480) {
-        $('#clock-value').css('font-size', 40 + "px");
-        $('#date-value').css('font-size', 35 + "px");
-        $('#temp').css('font-size', 45 + "px");
-    } else {
-        $('#date-value').css('font-size', 35);
-        $('#temp').css('font-size', 45);
-        $('.weather-icon-small').css('font-size', 40);
-    }
-
-    if (headerWidth < 570) {
-        $('.weather-icon').css('font-size', "110%");
-    } else {
-        var weatherWidth = $('.weather-pane').outerWidth();
-        $('.weather-icon').css('font-size', 40);
-        $('.weather-icon-small').css('font-size', 40);
-    }
+    // if (headerWidth < 480) {
+    //     $('#clock-value').css('font-size', 40 + "px");
+    //     $('#date-value').css('font-size', 35 + "px");
+    //     $('#temp').css('font-size', 45 + "px");
+    // } else {
+    //     $('#date-value').css('font-size', 35);
+    //     $('#temp').css('font-size', 45);
+    //     $('.weather-icon-small').css('font-size', 40);
+    // }
+    //
+    // if (headerWidth < 570) {
+    //     $('.weather-icon').css('font-size', "110%");
+    // } else {
+    //     var weatherWidth = $('.weather-pane').outerWidth();
+    //     $('.weather-icon').css('font-size', 40);
+    //     $('.weather-icon-small').css('font-size', 40);
+    // }
 }
