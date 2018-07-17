@@ -1,6 +1,6 @@
 /*Import Files*/
 
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
 /*Main Document Settings and Variables*/
 
 :root {
@@ -17,7 +17,6 @@
     border-radius: 5px;
     color: white;
     font-family: Lato, sans-serif;
-    font-weight: 300;
     box-sizing: border-box;
     margin: 0 auto;
     transition: all 0.2s;
@@ -78,10 +77,9 @@ body {
 }
 #temp {
     display: inline;
-    font-size: 25px;
+    /*font-size: 25px;*/
 }
 .forecast-data {
-    font-size: 15px;
     width: 100%;
     height: 100%;
     padding-top: 10px;
@@ -89,15 +87,15 @@ body {
 }
 
 .forecast-temp {
-    /*margin-top: 8px;*/
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
 }
 .slider-box {
-    height: 100px;
-    width: 95%;
-    /*padding-top: 10px;*/
-    /*padding-bottom: 8px;*/
+    height: 120px;
+    width: 100%;
     overflow-y: hidden;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 /*Class Files*/
@@ -148,15 +146,19 @@ body {
     flex-direction: column;
     text-align: center;
     font-size: 18px;
+    width: auto;
 }
 
 .upstate-seal {
     background-image: url('../img/upstate-seal.png');
     background-size: 100%;
     background-repeat: no-repeat;
+    height: 100%;
     float: left;
     margin-left: 0;
     margin-right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
     padding: 10px;
     background-origin: content-box;
 }
@@ -164,13 +166,13 @@ body {
 /* Javascript HTML Values */
 
 #clock-value {
-    /*font-size: 50px;*/
+    font-size: 50px;
     font-weight: 500;
 }
 
 #date-value {
-    /*font-size: 35px;*/
-    margin: 0;
+    font-size: 30px;
+    margin-top: -10px;
     padding-bottom: 6px;
     padding-top: -6px;
     font-weight: 300;
@@ -178,7 +180,7 @@ body {
 
 #weather-desc {
     text-transform: capitalize;
-    font-size: 22px;
+    font-size: 24px;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -194,19 +196,21 @@ body {
     justify-content: center;
 }
 .sun-times {
-    font-size: 15px;
-    width: 100%;
+    width: 95%;
     height: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
+    /*overflow: hidden;*/
+    margin-left: 6px;
+    margin-right: auto;
 }
 .sunset {
-    font-size: 15px;
+    font-size: 18px;
     /*margin-top: 20px;*/
     /*margin-bottom: 8px;*/
 }
 .sunrise {
-    font-size: 15px;
+    font-size: 18px;
     /*margin-bottom: 8px;*/
     /*margin-top: 20px;*/
 }
@@ -231,11 +235,11 @@ body {
     outline: none;
 }
 .max-temp {
-    font-size: 16px;
+    /*font-size: 16px;*/
 }
 .min-temp {
     display: inline;
-    font-size: 16px;
+    /*font-size: 16px;*/
 }
 .divider {
     /*font-size: 18px;*/
@@ -293,8 +297,11 @@ body {
     margin: 0;
 }
 
-.weather-time {
-    /*margin-bottom: 8px;*/
+.forecast-time {
+    margin-top: -5px;
+    padding-top: 0;
+    margin-bottom: auto;
+    font-size: 20px;
 }
 .top-box {
     height: 50%;
@@ -318,7 +325,7 @@ body {
 
 .weather-info {
     font-size: 30px;
-    margin-top: 0;
+    margin-top: -8px;
     margin-bottom: auto;
 }
 
@@ -412,8 +419,17 @@ body {
 
 .weather-icon {
     text-align: center;
-    margin-top: auto;
+    margin-top: 20px;
     margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 45px;
+}
+
+.weather-icon-small {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    font-size: 30px;
 }
 .weather-container {
     width: 100%;
@@ -450,6 +466,9 @@ body {
     background-color: white;
     border-left: 3px solid var(--main-color);
     border-top: 3px solid var(--main-color);
+}
+.upstate-cal {
+    border-radius: 5px;
 }
 
 .feedback {

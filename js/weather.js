@@ -58,7 +58,7 @@ function ajaxForecastInterface(jsonFile) {
 
 function fillForecastHTML(forecastData, hours) {
     for (var index = startIndex; index < lastIndex; index++) {
-        $('.weather-time.' + index).html(hours[index]);
+        $('.forecast-time.' + index).html(hours[index]);
         $('.forecast-temp.' + index).html(forecastData[0][index]);
         $('.weather-icon-small.' + index).html(forecastData[4][index]);
     }
@@ -91,8 +91,6 @@ function parseWeatherData(jsonFile, flag) {
         iconString = '<i class="wi wi-owm-'+ dayOrNight + '-' + weatherID + ' icon-color"></i>';
         windDirec = windDegreeMask(jsonFile.wind.deg);
         windSpeed = jsonFile.wind.speed;
-        // sunrise = convertTimeValues(jsonFile.sys.sunrise);
-        // sunset = convertTimeValues(jsonFile.sys.sunset);
         sunrise = sunTimes(jsonFile.sys.sunrise);
         sunset = sunTimes(jsonFile.sys.sunset);
         humidity = jsonFile.main.humidity;
@@ -119,7 +117,7 @@ function writeForecastHTML() {
 
     for (index = startIndex; index < lastIndex; index++) {
         str = str + "<div class='column-distribution style='height:100%''>";
-        str = str + "<div class='weather-time " + index + "'></div>";
+        str = str + "<div class='forecast-time " + index + "'></div>";
         str = str + "<div class='weather-icon-small " + index + "'></div>";
         str = str + "<div class='forecast-temp " + index + "'></div>";
         str = str + "</div>";
@@ -133,7 +131,6 @@ function writeWeatherHTML(weatherData) {
     $('#temp').html(weatherData[0]);
     $('.min-temp').html(weatherData[1]);
     $('.max-temp').html(weatherData[2]);
-    // $('.temp-range').html(weatherData[2] + "|" + weatherData[1]);
     $('#weather-desc').html(weatherData[3]);
     $('.weather-icon').html(weatherData[4]);
     $('.wind-data').html("Wind: " + Math.round(weatherData[6]) + " mph " + weatherData[5]);
