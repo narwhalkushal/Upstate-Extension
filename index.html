@@ -89,12 +89,14 @@
         <script src="js/clock.js"></script>
         <script src="js/uptodate.js"></script>
         <script src="js/slider.js"></script>
-        <script src="js/calendar.js"></script>
+        <?php include 'calendar.php';?
         <!-- <script src="js/options.js"></script> -->
         <!-- <iframe src="https://calendar.google.com/calendar/embed?title=Upstate%20Events%20Calendar&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%231B887A&amp;src=0g5lutmp776hpisbovsd7thojo42o924%40import.calendar.google.com&amp;color=%234eb5f1&amp;ctz=America%2FNew_York" style="border-width:0" width="624" height="300"  frameborder="0" scrolling="no"></iframe>    </a> -->
-        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%232952A3&amp;src=0g5lutmp776hpisbovsd7thojo42o924%40import.calendar.google.com&amp;color=%234eb5f1&amp;ctz=America%2FNew_York"
-            style="border-width:0" width="625" height="300" frameborder="0" scrolling="no"></iframe>
-
+        <!-- <iframe style="border-width: 0;" src="calendar.php" width="560" height="400" frameborder="0" scrolling="no"></iframe> -->
+        <div class='cal-container'>
+        <iframe class='upstate-cal' src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%232952A3&amp;src=0g5lutmp776hpisbovsd7thojo42o924%40import.calendar.google.com&amp;color=%234eb5f1&amp;ctz=America%2FNew_York"
+            style="border-width:0" height="300" frameborder="0" scrolling="no"></iframe>
+        </div>
         <a href="mailto:zvisco@gmail.com?Subject=Feedback%20on%20AccessUpstate">
             <div class="name-box"><span class="feedback">Feedback?</span><span class="name-credits"> Developed By:<br/> <span class="name"> Zach Visco</span></div>
         </a>

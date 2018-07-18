@@ -38,6 +38,8 @@ function modifyDisplay() {
 
     $('.upstate-seal').outerWidth($('.upstate-seal').outerHeight())
 
+    $('.upstate-cal').outerWidth(headerWidth);
+
     if (headerWidth >= .9*docWidth) {
         $('#clock-value').css('font-size', '50px');
         $('#date-value').css('font-size', '30px');

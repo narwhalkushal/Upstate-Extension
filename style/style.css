@@ -200,7 +200,6 @@ body {
     height: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    /*overflow: hidden;*/
     margin-left: 6px;
     margin-right: auto;
 }
@@ -469,6 +468,11 @@ body {
 }
 .upstate-cal {
     border-radius: 5px;
+}
+.cal-container {
+    border-radius: 5px;
+    /*overflow: hidden;*/
+    position: relative;
 }
 
 .feedback {
