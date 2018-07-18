@@ -30,7 +30,8 @@ body {
       -moz-background-size: cover;
     max-width: var(--maxwidth);
     margin: 0 auto;
-    height: 100%;
+    height: auto;
+    overflow: hidden;
     line-height: 1.45;
 }
 
@@ -442,7 +443,7 @@ body {
 .name-credits {
     display: inline;
     position: relative;
-    font-size: 15px;
+    /*font-size: 15px;*/
     color: #474646;
     text-decoration: none;
     text-align: right;
@@ -451,27 +452,36 @@ body {
 }
 
 .name {
-    font-size: 20px;
+    font-size: 18px;
     color: rgba(78, 181, 241);
 }
-
+.scaler {
+    transform-origin: center top;
+    overflow: hidden;
+}
+.name-scaler {
+    transform-origin: 100% 100%;
+    /*position: fixed;*/
+}
 .name-box {
-    position: fixed;
+    position: absolute;
     border-radius: 50px 0 0 0;
-    width: 150px;
+    width: 140px;
     height: 65px;
     right: 0;
     bottom: 0;
     background-color: white;
     border-left: 3px solid var(--main-color);
     border-top: 3px solid var(--main-color);
+    /*transform-origin: right 0% !important;*/
 }
 #calendar {
     color: white;
     background-color: var(--main-color-opaque);
-    width: 100%;
+    width: 1000px;
     display: inline-block;
     border: solid white;
+
 }
 .fc-today {
     background: var(--main-color) !important;
@@ -479,10 +489,14 @@ body {
     border-top: 1px solid #ddd !important;
     font-weight: bold;
 }
-.cal-container {
-    border-radius: 5px;
-    /*overflow: hidden;*/
+.calendar-container {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
 .feedback {

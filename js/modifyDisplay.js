@@ -1,17 +1,35 @@
 $(document).ready(function() {
     modifyDisplay();
+    scaleDisplay();
 });
 
 $(window).on('resize', function() {
     modifyDisplay();
 });
 
+var cssVariables = getComputedStyle(document.body);
+var docWidth = cssVariables.getPropertyValue('--maxwidth');
+
+function scaleDisplay() {
+
+    var scaleValue = screen.width/1680
+    var cssVariables = getComputedStyle(document.body);
+
+    $('.scaler').css('transform', 'scale(' + scaleValue + ')');
+    // $('.name-scaler').css('transform', 'scale(' + scaleValue + ') translateY(-140px) translateX(9px)');
+    // $('.name-scaler').css('right', 0);
+    document.documentElement.style.setProperty('--element-spacing', '5px');
+    // $('.name-scaler').css('transform', 'translateY(-100px)');
+    // $('.name-box').outerWidth($('.name-box').outerWidth()*scaleValue);
+    // $('.name-box').outerHeight($('.name-box').outerHeight()*scaleValue);
+
+}
 function modifyDisplay() {
     // function to set right column to same height as left column
 
-    var cssVariables = getComputedStyle(document.body);
 
     docWidth = cssVariables.getPropertyValue('--maxwidth');
+
     docWidth = parseInt(docWidth.replace(/px/, ''));
 
     elementSpacing = cssVariables.getPropertyValue('--elementspacing');
@@ -39,7 +57,7 @@ function modifyDisplay() {
     $('.upstate-seal').outerWidth($('.upstate-seal').outerHeight())
 
     $('.upstate-cal').outerWidth(headerWidth);
-
+    // $('.calendar-container').outerWidth(headerWidth/docWidth*100 + '%');
     if (headerWidth >= .9*docWidth) {
         $('#clock-value').css('font-size', '50px');
         $('#date-value').css('font-size', '30px');

@@ -2,15 +2,18 @@ $(function() {
     $('#calendar').fullCalendar({
         googleCalendarApiKey: googleCalKey,
         events: {
-            googleCalendarId: '0g5lutmp776hpisbovsd7thojo42o924@import.calendar.google.com'
+            googleCalendarId: googleCalId
         },
-        defaultView: 'basicWeek',
+        defaultView: 'agendaWeek',
         header: {
             left: '',
             center: 'title',
             right: ''
         },
+        nowIndicator: true,
         height: 180,
+        slotDuration: '01:00:00',
+        minTime: '07:00:00'
     });
     // $('#calendar').css('background-color', 'black');
 });
