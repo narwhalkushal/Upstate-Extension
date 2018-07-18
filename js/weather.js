@@ -11,9 +11,8 @@ var lastIndex = 4;
 
 function ajaxWeather(latitude, longitude) {
 
-    var APIKey = '11adcfe70b89b2df10b3fcb71b8f2a89';
-    var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=imperial' + '&appid=' + APIKey;
-    var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&cnt=5&units=imperial' + '&appid=' + APIKey;
+    var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=imperial' + '&appid=' + weatherApiKey;
+    var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&cnt=5&units=imperial' + '&appid=' + weatherApiKey;
 
     console.log(weatherURL)
     console.log(forecastURL)
