@@ -471,10 +471,10 @@ body {
     background-color: var(--main-color-opaque);
     width: 100%;
     display: inline-block;
-    /*height: 240px;*/
+    border: solid white;
 }
 .fc-today {
-    background: #FFF !important;
+    background: var(--main-color) !important;
     border: none !important;
     border-top: 1px solid #ddd !important;
     font-weight: bold;

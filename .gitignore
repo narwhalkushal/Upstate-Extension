@@ -1,2 +1,4 @@
 apiKeys.js
 *.json
+!manifest.json
+.gitignore
