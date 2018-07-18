@@ -466,8 +466,18 @@ body {
     border-left: 3px solid var(--main-color);
     border-top: 3px solid var(--main-color);
 }
-.calendar {
-    border-radius: 5px;
+#calendar {
+    color: white;
+    background-color: var(--main-color-opaque);
+    width: 100%;
+    display: inline-block;
+    /*height: 240px;*/
+}
+.fc-today {
+    background: #FFF !important;
+    border: none !important;
+    border-top: 1px solid #ddd !important;
+    font-weight: bold;
 }
 .cal-container {
     border-radius: 5px;
