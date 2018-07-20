@@ -10,10 +10,10 @@ Chrome new-tab extension built for SUNY Upstate Students
   * UpToDate search that works off-campus
 
 ### Main Screen
-![](img/main-screen.PNG)
+![](img/main-screen.png)
 
 ### Popup Screen
-![](img/popup.PNG)
+![](img/popup.png)
 
 ### Calendar Screen
 ![](img/calendar.png)
