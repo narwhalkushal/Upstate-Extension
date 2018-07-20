@@ -11,10 +11,6 @@
     --elementspacing: 5px;
     --main-color: rgba(0, 20, 140);
     --main-color-opaque: rgba(0, 20, 140, .7);
-    /*--main-color: rgba(78, 181, 241);*/
-    /*--main-color-opaque: rgba(78, 181, 241, .7);*/
-    /*--main-color: rgba(27, 35, 78);*/
-    /*--main-color-opaque: rgba(27, 35, 78, .6);*/
 }
 
 * {

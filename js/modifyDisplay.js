@@ -17,6 +17,7 @@ function scaleDisplay() {
 
     $('.scaler').css('transform', 'scale(' + scaleValue + ')');
     document.documentElement.style.setProperty('--element-spacing', '5px');
+    document.documentElement.style.setProperty('--margin-spacing', '5px');
 }
 function modifyDisplay() {
     // function to set right column to same height as left column

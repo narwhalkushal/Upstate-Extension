@@ -11,6 +11,7 @@
     --elementspacing: 5px;
     --main-color: rgba(0, 20, 140);
     --main-color-opaque: rgba(0, 20, 140, .7);
+    --margin-spacing: 5px;
     /*--main-color: rgba(78, 181, 241);*/
     /*--main-color-opaque: rgba(78, 181, 241, .7);*/
     /*--main-color: rgba(27, 35, 78);*/
@@ -29,14 +30,11 @@
 body {
     background-image: url("../img/weiskotten.jpg");
     background-position: center center;
-    background-repeat: ncao-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
       -moz-background-size: cover;
     max-width: var(--maxwidth);
-    margin: 0 auto;
     height: auto;
-    /*height: 900px;*/
-    /*overflow: hidden;*/
     line-height: 1.45;
 }
 
@@ -50,7 +48,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(24, 25, 27);
+    background-color: rgb(103, 110, 136);
     z-index: 99;
     height: 100%;
     width: 100%;
@@ -59,18 +57,17 @@ body {
 #status {
     /*content: url('../img/pizza.gif');*/
     /*content: url('../img/medical.gif');*/
-    /*content: url('../img/paper-airplane.gif');*/
-    content: url('../img/fire.gif');
+    content: url('../img/planet-loader.gif');
     position: absolute;
-    width: 450px;
-    height: 450px;
+    width: 250px;
+    /*height: 150px;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     left: 50%;
-    bottom: 35%;
+    bottom: 45%;
     transform: translateX(-50%);
 }
 
@@ -78,10 +75,11 @@ body {
     position: absolute;
     /*text-align: center;*/
     /*vertical-align: middle;*/
-    font-size: 35px;
+    font-size: 25px;
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
+    color: white;
 }
 #temp {
     display: inline;
