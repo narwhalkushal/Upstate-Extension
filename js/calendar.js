@@ -17,17 +17,28 @@ $(function() {
         eventMouseover: function(calEvent, jsEvent) {
             var tooltip = '<div class="tooltipevent"> <span class="event-title">' + calEvent.title + '</span><br>Location: ' + calEvent.location + '<br>Time: ' + timeString(calEvent.start, calEvent.end) + '</div>';
             var $tooltip = $(tooltip).appendTo('body');
+            var wid = $('.tooltipevent').outerWidth();
             $(this).css('background-color', 'rgba(39,110,241)');
             $(this).css('transition', '0s');
             $(this).css('border', '0.5px solid white');
             $(this).css('color', 'white');
             $(this).mouseover(function(e) {
                 $(this).css('z-index', 10000);
-                // $tooltip.fadeIn('100', 'easein');
-                // $tooltip.fadeTo('10', 1.9);
             }).mousemove(function(e) {
-                $tooltip.css('top', e.pageY + 20);
-                $tooltip.css('left', e.pageX - $('.tooltipevent').outerWidth() / 2);
+                var rightOffset = ($(window).width() - ($(this).offset().left + $(this).outerWidth()));
+                var calendarOffset = ($(window).width() - ($('.calendar-container').offset().left + $('.calendar-container').outerWidth()));
+                if ($(this).offset().left < wid/2) {
+                    $tooltip.css('top', e.pageY + 20)
+                    $tooltip.css('left', e.pageX);
+                } else if (rightOffset <= wid/2) {
+                    $tooltip.css('top', e.pageY + 20)
+                    $tooltip.css('left', e.pageX - wid);
+                    // $tooltip.css('top', e.pageY + 50);
+                    // $tooltip.css('right', e.PageX - $(this).outerWidth());
+                } else {
+                    $tooltip.css('top', e.pageY + 20);
+                    $tooltip.css('left', e.pageX - wid / 2);
+                }
             });
         },
         eventMouseout: function(calEvent, jsEvent) {
@@ -46,22 +57,27 @@ $(function() {
         header: {
             left: 'prev,next today',
             center: 'title',
-            right: 'basicWeek,agendaThreeDay'
+            right: 'basicWeek,basicFourWeek'
         },
         buttonText: {
             today: 'Jump to Today',
             agendaDay: 'Agenda View',
-            basicWeek: 'Week View'
+            basicWeek: 'Week View',
+            agendaThreeDay: 'Hourly View',
+            basicFourWeek: 'Month View'
         },
+        height: 200,
         nowIndicator: true,
-        height: 180,
+        // height: 'parent',
         slotDuration: '01:00:00',
         scrollTime: startTime(),
-        displayEventTime: false,
+        // displayEventTime: false,
         views: {
-            agendaThreeDay: {
-                type: 'agenda',
-                dayCount: 3,
+            basicFourWeek: {
+                type: 'basic',
+                duration: {
+                    weeks: 4
+                }
             }
         }
     });

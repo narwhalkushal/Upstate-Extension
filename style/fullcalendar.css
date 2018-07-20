@@ -278,6 +278,7 @@ hr.fc-divider {
     border-width: 1px;
     padding: 0;
     vertical-align: top;
+    height: auto;
 }
 
 .fc td.fc-today {
@@ -427,9 +428,10 @@ temporary rendered events).
     line-height: 1.8;
     border-radius: 0px;
     /*border: 1px solid white;*/
-    height: 20px;
+    /*height: 20px;*/
     border: .5px solid white !important;
     border-radius: 5px;
+    word-wrap: break-word;
     /*color: rgba(27, 35, 78);*/
     /* default BORDER color */
 }
@@ -752,7 +754,7 @@ TODO: more distinction between this file and common.css
 
 .fc-unthemed td.fc-today {
     /*background: rgb(27, 35, 78, .6);*/
-    background: rgba(255, 255, 255, .6);
+    /*background: rgba(255, 255, 255, .6);*/
 }
 
 .fc-unthemed .fc-disabled-day {
@@ -1300,7 +1302,6 @@ NOTE: use percentage font sizes or else old IE chokes
 
 /* TimeGrid Event Containment
 --------------------------------------------------------------------------------------------------*/
-
 .fc-ltr .fc-time-grid .fc-event-container {
     /* space on the sides of events for LTR (default) */
     margin: 0 2.5% 0 2px;
