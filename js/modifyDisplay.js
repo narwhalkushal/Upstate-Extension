@@ -15,7 +15,7 @@ function scaleDisplay() {
     var scaleValue = screen.width/1680
     var cssVariables = getComputedStyle(document.body);
 
-    $('.scaler').not('').css('transform', 'scale(' + scaleValue + ')');
+    $('.scaler').css('transform', 'scale(' + scaleValue + ')');
     document.documentElement.style.setProperty('--element-spacing', '5px');
 }
 function modifyDisplay() {

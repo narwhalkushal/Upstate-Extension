@@ -1,6 +1,6 @@
 /*Import Files*/
 
-@import url(https://fonts.googleapis.com/css?family=Lato:300);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700);
 /*Main Document Settings and Variables*/
 
 :root {
@@ -34,8 +34,8 @@ body {
       -moz-background-size: cover;
     max-width: var(--maxwidth);
     margin: 0 auto;
-    /*height: auto;*/
-    height: 900px;
+    height: auto;
+    /*height: 900px;*/
     /*overflow: hidden;*/
     line-height: 1.45;
 }
@@ -449,41 +449,65 @@ body {
     color: white;
 }
 
-.name-credits {
-    display: inline;
-    position: absolute;
-    /*font-size: 15px;*/
-    color: #474646;
+.name-credit {
+    color: white;
     text-decoration: none;
     text-align: right;
-    left: 40px;
-    top: 10px;
+    margin-right: 0;
+    font-weight: 300;
 }
+.name-container {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    color: white;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--main-color-opaque);
+    border: 3px solid white;
+    /*text-align: right;*/
+    vertical-align: middle;
+    transition: 0s;
+}
+.app-title {
+    margin-left: 0;
+    font-weight: 300;
+    /*margin-top: .15em;*/
+}
+a {
+    text-decoration: none;
+}
+.fc-header-toolbar {
+    padding-left: 13px;
+    padding-top: 5px;
+    padding-right: 13px;
+}
+
+.name-box:hover {
+    right: 0px;
+    color: blue;
+    transition: 0s;
+}
+
 
 .name {
     font-size: 15px;
-    color: rgba(78, 181, 241);
+    color: white;
+    font-weight: 700;
 }
 .scaler {
     transform-origin: center top;
     overflow: hidden;
 }
-.name-scaler {
-    transform-origin: 100% 100%;
-    /*position: fixed;*/
-}
 .name-box {
-    position: fixed;
-    border-radius: 50px 0 0 0;
-    width: 140px;
-    height: 65px;
-    right: 0;
-    bottom: 0;
-    background-color: white;
-    border-left: 3px solid var(--main-color);
-    border-top: 3px solid var(--main-color);
-    /*transform-origin: right 0% !important;*/
+    display: flex;
+    height: auto;
+    position: relative;
+    border-radius: 25px 0 0 0;
+    margin-right: 0;
 }
+
 #calendar {
     color: white;
     background-color: var(--main-color-opaque);
@@ -514,39 +538,6 @@ body {
     margin-bottom: 5px;
 }
 
-.feedback {
-    position: absolute;
-    font-size: 15px;
-    /*color #474646;*/
-    color: transparent;
-    text-decoration: none;
-    text-align: right;
-    top: 22px;
-    right: 33px;
-    /*display: none;*/
-}
-.name-box:hover .feedback{
-    color: white;
-}
-.verticalLine {
-  border-left: thick solid #24ff00;
-}
-.name-box:hover .name-credits {
-    /*font-weight: bold;*/
-    color: white;
-}
-
-.name-box:hover {
-    background-color: var(--main-color);
-    border-left: 3px solid white;
-    border-top: 3px solid white;
-    width: 300px;
-}
-
-.name-box:hover .name {
-    color: white;
-    font-weight: bold;
-}
 .event-title {
     color: black;
     font-size: 14px;
