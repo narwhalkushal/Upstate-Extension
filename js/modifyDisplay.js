@@ -12,7 +12,7 @@ var docWidth = cssVariables.getPropertyValue('--maxwidth');
 
 function scaleDisplay() {
 
-    var scaleValue = screen.width/1680
+    var scaleValue = screen.width/1680*.9;
     var cssVariables = getComputedStyle(document.body);
 
     $('.scaler').css('transform', 'scale(' + scaleValue + ')');
