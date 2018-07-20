@@ -48,6 +48,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    /*background-color: white;*/
     background-color: rgb(103, 110, 136);
     z-index: 99;
     height: 100%;
@@ -57,7 +58,7 @@ body {
 #status {
     /*content: url('../img/pizza.gif');*/
     /*content: url('../img/medical.gif');*/
-    content: url('../img/planet-loader.gif');
+    content: url('../img/block-loader-2.gif');
     position: absolute;
     width: 250px;
     /*height: 150px;*/
