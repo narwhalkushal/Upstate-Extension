@@ -2714,7 +2714,7 @@ exports.globalDefaults = {
         prevYear: 'prev year',
         nextYear: 'next year',
         year: 'year',
-        today: 'Jump to Today',
+        today: 'today',
         month: 'month',
         week: 'week',
         day: 'day'
@@ -10433,11 +10433,11 @@ var DateProfileGenerator = /** @class */ (function () {
         var customAlignment = this.opt('dateAlignment');
         var runningCount = 0;
         var start = date.clone();
+		start.subtract(1, 'day');
         var end;
         if (customAlignment) {
             start.startOf(customAlignment);
         }
-        start.startOf('day');
         start = this._view.skipHiddenDays(start, direction);
         end = start.clone();
         do {

@@ -64,6 +64,7 @@ body .fc {
     /*margin-top: auto; */
     /*margin-bottom: auto;*/
     height: 2.1em;
+    left: 10px;
     /*padding: 0 .6em;*/
     /* text & cursor */
     font-size: 1em;
@@ -71,12 +72,6 @@ body .fc {
     white-space: nowrap;
     border-radius: 0;
     cursor: pointer;
-    /*margin-right: 8px;*/
-    left: 16px;
-    margin-right: 16px;
-    /*margin-bottom: 8px;*/
-    /*margin-top: 4px;*/
-
 }
 
 /* Firefox has an annoying inner border */
@@ -397,15 +392,15 @@ temporary rendered events).
 /* Scrolling Container
 --------------------------------------------------------------------------------------------------*/
 .fc-content {
-    color: rgba(27, 35, 78);
+    color: white;
+    /*color: rgba(27, 35, 78);*/
     /*display: inline;*/
     white-space: nowrap;
     text-overflow: hidden;
-}
-.fc-event-container:hover .fc-content {
-    color: white;
-    /*background-color: rgba(39, 110, 241);*/
     transition-duration: 0s !important;
+}
+.fc-day-number {
+    color: white;
 }
 .fc-scroller {
     -webkit-overflow-scrolling: touch;
@@ -430,10 +425,11 @@ temporary rendered events).
     /* make the <a> tag block */
     font-size: .85em;
     line-height: 1.8;
-    border-radius: 3px;
-    border: 1px solid white;
+    border-radius: 0px;
+    /*border: 1px solid white;*/
     height: 20px;
-    padding: 3px;
+    border: .5px solid white !important;
+    border-radius: 5px;
     /*color: rgba(27, 35, 78);*/
     /* default BORDER color */
 }
@@ -465,7 +461,7 @@ temporary rendered events).
 .fc-event .fc-bg {
     /* the generic .fc-bg already does position */
     z-index: 1;
-    background: #fff;
+    /*background: #fff;*/
     opacity: .25;
 }
 
@@ -644,7 +640,7 @@ tr:first-child>td>.fc-day-grid-event {
     left: -1px;
     /* darkening effect */
     background: #000;
-    opacity: .25;
+    /*opacity: .25;*/
 }
 
 .fc-day-grid-event .fc-content {
@@ -760,8 +756,8 @@ TODO: more distinction between this file and common.css
 }
 
 .fc-unthemed .fc-disabled-day {
-    background: #d7d7d7;
-    opacity: .3;
+    /*background: #d7d7d7;*/
+    /*opacity: .3;*/
 }
 
 /* Icons (inline elements with styled text that mock arrow icons)
@@ -783,6 +779,7 @@ TODO: more distinction between this file and common.css
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    transition: 0s  !important;
 }
 .fc-state-default:hover .fc-icon {
     color: white;

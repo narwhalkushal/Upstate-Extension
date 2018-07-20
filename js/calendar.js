@@ -12,15 +12,15 @@ $(function() {
         timezone: 'local',
         allDaySlot: false,
         eventColor: 'white',
-        eventBorderColor: 'rgba(27, 35, 78)',
-        // eventTextColor: 'rgba(27, 35, 78)',
         firstDay: day - 3,
+        eventColor: '#D10F39',
         eventMouseover: function(calEvent, jsEvent) {
             var tooltip = '<div class="tooltipevent"> <span class="event-title">' + calEvent.title + '</span><br>Location: ' + calEvent.location + '<br>Time: ' + timeString(calEvent.start, calEvent.end) + '</div>';
             var $tooltip = $(tooltip).appendTo('body');
-            // $(this).css('background-color', 'rgba(39,110,241)');
-            // $(this).css('border', '0.5px solid white');
-            // $(this).css('color', 'white');
+            $(this).css('background-color', 'rgba(39,110,241)');
+            $(this).css('transition', '0s');
+            $(this).css('border', '0.5px solid white');
+            $(this).css('color', 'white');
             $(this).mouseover(function(e) {
                 $(this).css('z-index', 10000);
                 // $tooltip.fadeIn('100', 'easein');
@@ -33,8 +33,10 @@ $(function() {
         eventMouseout: function(calEvent, jsEvent) {
             $(this).css('z-index', 8);
             $('.tooltipevent').remove();
-            // $(this).css('background-color', 'white');
-            // $(this).css('color', 'rgba(27, 35, 78)', 'important');
+            $(this).css('background-color', '#D10F39');
+            $(this).css('transition', '0s');
+            $(this).css('border', '0.5px solid white')
+            $(this).css('color', 'rgba(27, 35, 78)');
         },
         eventClick: function(event) {
             if (event.url) {
@@ -44,17 +46,24 @@ $(function() {
         header: {
             left: 'prev,next today',
             center: 'title',
-            right: 'agenda,basicWeek,list'
+            right: 'basicWeek,agendaThreeDay'
         },
-        // header: {
-        //     left: 'prev,next today',
-        //     center: 'title',
-        //     right: 'agenda,basicWeek'
-        // },
+        buttonText: {
+            today: 'Jump to Today',
+            agendaDay: 'Agenda View',
+            basicWeek: 'Week View'
+        },
         nowIndicator: true,
         height: 180,
         slotDuration: '01:00:00',
-        scrollTime: startTime()
+        scrollTime: startTime(),
+        displayEventTime: false,
+        views: {
+            agendaThreeDay: {
+                type: 'agenda',
+                dayCount: 3,
+            }
+        }
     });
 });
 
