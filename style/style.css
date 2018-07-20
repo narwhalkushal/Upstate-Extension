@@ -9,13 +9,17 @@
     --borderwidth: 3px;
     --headerheight: 120px;
     --elementspacing: 5px;
-    --main-color: rgba(78, 181, 241);
-    --main-color-opaque: rgba(78, 181, 241, .7);
+    --main-color: rgba(0, 20, 140);
+    --main-color-opaque: rgba(0, 20, 140, .7);
+    /*--main-color: rgba(78, 181, 241);*/
+    /*--main-color-opaque: rgba(78, 181, 241, .7);*/
+    /*--main-color: rgba(27, 35, 78);*/
+    /*--main-color-opaque: rgba(27, 35, 78, .6);*/
 }
 
 * {
     border-radius: 5px;
-    color: white;
+    /*color: white;*/
     font-family: Lato, sans-serif;
     box-sizing: border-box;
     margin: 0 auto;
@@ -31,12 +35,14 @@ body {
     max-width: var(--maxwidth);
     margin: 0 auto;
     height: auto;
-    overflow: hidden;
+    /*overflow: hidden;*/
     line-height: 1.45;
 }
 
 /* Preloader */
-
+.header-pane {
+    color: white;
+}
 #preloader {
     position: absolute;
     top: 0;
@@ -96,7 +102,7 @@ body {
     height: 120px;
     width: 100%;
     overflow-y: hidden;
-    /*white-space: nowrap;*/
+    white-space: nowrap;
 }
 
 /*Class Files*/
@@ -201,7 +207,7 @@ body {
     height: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left: 6px;
+    margin-left: 7px;
     margin-right: auto;
 }
 .sunset {
@@ -261,6 +267,7 @@ body {
     width: 100%;
     float: left;
     margin-bottom: 5px;
+    color: white;
 }
 
 .link-btn {
@@ -274,6 +281,7 @@ body {
     text-align: center;
     background: var(--main-color-opaque);
     font-size: 20px;
+    color: white;
 }
 
 .link-btn:hover {
@@ -437,17 +445,17 @@ body {
 }
 
 .icon-color {
-    color: rgb(27, 35, 78);
+    color: white;
 }
 
 .name-credits {
     display: inline;
-    position: relative;
+    position: absolute;
     /*font-size: 15px;*/
     color: #474646;
     text-decoration: none;
     text-align: right;
-    left: 45px;
+    left: 40px;
     top: 10px;
 }
 
@@ -464,7 +472,7 @@ body {
     /*position: fixed;*/
 }
 .name-box {
-    position: absolute;
+    position: fixed;
     border-radius: 50px 0 0 0;
     width: 140px;
     height: 65px;
@@ -484,10 +492,11 @@ body {
 
 }
 .fc-today {
-    background: var(--main-color) !important;
+    background: rgb(39,110,241,.7) !important;
     border: none !important;
     border-top: 1px solid #ddd !important;
     font-weight: bold;
+    border-radius: 0;
 }
 .calendar-container {
     position: relative;
@@ -502,15 +511,23 @@ body {
 .feedback {
     position: absolute;
     font-size: 15px;
-    color #474646;
+    /*color #474646;*/
+    color: transparent;
     text-decoration: none;
     text-align: right;
     top: 22px;
     right: 33px;
+    /*display: none;*/
 }
-
+.name-box:hover .feedback{
+    color: white;
+}
+.verticalLine {
+  border-left: thick solid #24ff00;
+}
 .name-box:hover .name-credits {
     /*font-weight: bold;*/
+    color: white;
 }
 
 .name-box:hover {
@@ -522,5 +539,23 @@ body {
 
 .name-box:hover .name {
     color: white;
-    /*font-weight: bold;*/
+    font-weight: bold;
+}
+.event-title {
+    color: black;
+    font-size: 14px;
+}
+.tooltipevent {
+    max-width: 300px;
+    /*margin-left: 0;*/
+    margin-top: 0;
+    width: auto;
+    height:auto;
+    font-size: 12px;
+    background-color: white;
+    color: var(--main-color);
+    border: 3px solid var(--main-color);
+    position:absolute;
+    z-index:10001;
+    padding: 5px;
 }

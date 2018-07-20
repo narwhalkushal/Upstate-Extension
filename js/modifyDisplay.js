@@ -16,13 +16,7 @@ function scaleDisplay() {
     var cssVariables = getComputedStyle(document.body);
 
     $('.scaler').css('transform', 'scale(' + scaleValue + ')');
-    // $('.name-scaler').css('transform', 'scale(' + scaleValue + ') translateY(-140px) translateX(9px)');
-    // $('.name-scaler').css('right', 0);
     document.documentElement.style.setProperty('--element-spacing', '5px');
-    // $('.name-scaler').css('transform', 'translateY(-100px)');
-    // $('.name-box').outerWidth($('.name-box').outerWidth()*scaleValue);
-    // $('.name-box').outerHeight($('.name-box').outerHeight()*scaleValue);
-
 }
 function modifyDisplay() {
     // function to set right column to same height as left column
@@ -82,8 +76,8 @@ function modifyDisplay() {
         $('.min-temp').css('font-size', '15px');
         $('.sun-desc').css('font-size', '20px');
         $('.extra-data').css('font-size', '18px');
-        $('.sunrise').css('font-size', '15px');
-        $('.sunset').css('font-size', '15px');
+        $('.sunrise').css('font-size', '18px');
+        $('.sunset').css('font-size', '18px');
     } else {
         $('.weather-icon').css('font-size', colWidth/10);
         $('.weather-icon-small').css('font-size', colWidth/12);
