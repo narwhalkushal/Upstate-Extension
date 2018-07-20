@@ -1,0 +1,136 @@
+/*Import Files*/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700);
+/*Main Document Settings and Variables*/
+
+:root {
+    --maxwidth: 300px;
+    --iconwidth: 90px;
+    --borderwidth: 3px;
+    --headerheight: 120px;
+    --elementspacing: 5px;
+    --main-color: rgba(0, 20, 140);
+    --main-color-opaque: rgba(0, 20, 140, .7);
+    /*--main-color: rgba(78, 181, 241);*/
+    /*--main-color-opaque: rgba(78, 181, 241, .7);*/
+    /*--main-color: rgba(27, 35, 78);*/
+    /*--main-color-opaque: rgba(27, 35, 78, .6);*/
+}
+
+* {
+    border-radius: 5px;
+    /*color: white;*/
+    font-family: Lato, sans-serif;
+    box-sizing: border-box;
+    /*margin: 0 auto;*/
+    transition: all 0.2s;
+}
+
+body {
+    background-image: url("../img/weiskotten.jpg");
+    background-position: center center;
+    background-repeat: ncao-repeat;
+    background-size: cover;
+      -moz-background-size: cover;
+    max-width: var(--maxwidth);
+    /*margin: 0 5px;*/
+    height: auto;
+    width: 300;
+    /*height: 900px;*/
+    /*overflow: hidden;*/
+    line-height: 1.45;
+}
+.title-text {
+    color: var(--main-color);
+    /*background-color: blue;*/
+    margin-top: 2px;
+}
+
+/*Class Files*/
+
+.header-pane {
+    border: 3px solid var(--main-color);
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    margin-bottom: var(--elementspacing);
+}
+.horiz-line {
+    width: 95%;
+    border-top: 3px solid var(--main-color);
+    margin-bottom: 5px;
+}
+
+.row-distribution {
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    width: 100%;
+}
+
+.column-distribution {
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+}
+
+.upstate-seal {
+    background-image: url('../img/upstate-seal-blue.png');
+    background-size: 35px;
+    height: 38px;
+    width: 38px;
+    background-repeat: no-repeat;
+    /*height: 100%;*/
+    /*float: left;*/
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /*padding: 10px;*/
+    /*background-origin: content-box;*/
+}
+
+.uptodate-icon {
+    background-image: url('../img/uptodate.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 28px;
+}
+
+/* Link Buttons */
+
+.container {
+    height: auto;
+    width: 100%;
+    float: left;
+    color: white;
+}
+
+.link-btn {
+    width: 100%;
+    display: block;
+    padding: 0.5em 0em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    border: 3px solid white;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    background: var(--main-color-opaque);
+    font-size: 20px;
+    color: white;
+}
+
+.link-btn:hover {
+    color: var(--main-color);
+    border: 3px solid var(--main-color);
+    border-radius: 2em;
+    background-color: white;
+}
+}
