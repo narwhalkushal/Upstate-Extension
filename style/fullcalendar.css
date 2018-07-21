@@ -30,8 +30,9 @@ body .fc {
     display: flex;
     color: white;
     text-align: center;
-    /*padding-top: .2em;*/
-    padding-bottom: .65em;
+    padding-top: .25em;
+    padding-bottom: 1.2em;
+    font-size: 13px;
 }
 .fc-highlight {
     /* when user is selecting cells */

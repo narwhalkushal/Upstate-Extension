@@ -55,10 +55,8 @@ body {
     width: 100%;
 }
 
-#status {
-    /*content: url('../img/pizza.gif');*/
-    /*content: url('../img/medical.gif');*/
-    content: url('../img/block-loader-2.gif');
+#status:after {
+    content: url('../img/planet-loader.gif');
     position: absolute;
     width: 250px;
     /*height: 150px;*/

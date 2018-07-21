@@ -5,8 +5,8 @@
     <link href="style/weather-icons.css" rel="stylesheet" type="text/css">
     <link rel='stylesheet' href='style/fullcalendar.css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
     <title>AccessUpstate </title>
-
     <body>
         <div id="preloader">
             <div id="status">&nbsp;</div>
@@ -14,47 +14,47 @@
                 <p>AccessUpstate Loading...</p>
             </div>
         </div>
-            <div class='scaler'>
-                <div class="header-pane row-distribution">
-                    <div class="upstate-seal"></div>
-                    <div class="time-panel">
-                        <div id="clock-value"></div>
-                        <div id="date-value"></div>
-                    </div>
-                    <div class="upstate-seal"></div>
+        <div class='scaler'>
+            <div class="header-pane row-distribution">
+                <div class="upstate-seal"></div>
+                <div class="time-panel">
+                    <div id="clock-value"></div>
+                    <div id="date-value"></div>
                 </div>
-                <form method="get" id="search-form" class="search-form" method='POST' autocomplete="off">
-                    <input type="text" id="search-value" class="search-query uptodate-icon" placeholder="UpToDate Search">
-                </form>
-                <div class="container row-distribution">
-                    <div class="left-column column-distribution">
-                        <a href="https://webmail.upstate.edu/gw/webacc" class="link-btn">GroupWise</a>
-                        <a href="https://bb.upstate.edu/" class="link-btn"> BlackBoard</a>
-                        <a href="https://upstate.presence.io/" class="link-btn"> Presence </a>
-                        <a href="https://upstate.rev.vbrick.com/#/login" class="link-btn">Vbrick</a>
-                        <a href="https://bannerweb.upstate.edu/" class="link-btn">My Upstate</a>
-                    </div>
-                    <div class="right-column">
-                        <div class="weather-pane column-distribution">
-                            <div class="weather-info"> Syracuse Weather </div>
-                            <div class="row-distribution">
-                                <i class="weather-icon"></i>
-                                <div class="temp-container">
-                                    <div id="temp"></div>
-                                    <div class="temp-range">
-                                        <div class="max-temp"></div>
-                                        <div class="horiz-line"></div>
-                                        <div class="min-temp"></div>
-                                    </div>
+                <div class="upstate-seal"></div>
+            </div>
+            <form method="get" id="search-form" class="search-form" method='POST' autocomplete="off">
+                <input type="text" id="search-value" class="search-query uptodate-icon" placeholder="UpToDate Search">
+            </form>
+            <div class="container row-distribution">
+                <div class="left-column column-distribution">
+                    <a href="https://webmail.upstate.edu/gw/webacc" class="link-btn">GroupWise</a>
+                    <a href="https://bb.upstate.edu/" class="link-btn"> BlackBoard</a>
+                    <a href="https://upstate.presence.io/" class="link-btn"> Presence </a>
+                    <a href="https://upstate.rev.vbrick.com/#/login" class="link-btn">Vbrick</a>
+                    <a href="https://bannerweb.upstate.edu/" class="link-btn">My Upstate</a>
+                </div>
+                <div class="right-column">
+                    <div class="weather-pane column-distribution">
+                        <div class="weather-info"> Syracuse Weather </div>
+                        <div class="row-distribution">
+                            <i class="weather-icon"></i>
+                            <div class="temp-container">
+                                <div id="temp"></div>
+                                <div class="temp-range">
+                                    <div class="max-temp"></div>
+                                    <div class="horiz-line"></div>
+                                    <div class="min-temp"></div>
                                 </div>
-                                <i class="weather-icon"></i>
                             </div>
-                            <div id="weather-desc"></div>
-                            <div class="horiz-line-thick"></div>
-                            <div class="slider-box column-distribution">
-                                <div class="inner-liner">
-                                    <span class="forecast-data row-distribution"></span>
-                                    <span class="sun-times row-distribution">
+                            <i class="weather-icon"></i>
+                        </div>
+                        <div id="weather-desc"></div>
+                        <div class="horiz-line-thick"></div>
+                        <div class="slider-box column-distribution">
+                            <div class="inner-liner">
+                                <span class="forecast-data row-distribution"></span>
+                                <span class="sun-times row-distribution">
                             <div class="column-distribution sun-desc">
                                 <div class="sunrise"></div>
                                 <i class="wi wi-sunrise icon-color sunicon" style="font-size:25px"></i> Sunrise
@@ -68,34 +68,35 @@
                                 <i class="wi wi-sunset icon-color sunicon" style="font-size:25px"></i> Sunset
                             </div>
                         </span>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row-distribution">
-                        <a href="https://facebook.com" class="btn-icon facebook"></a>
-                        <a href="https://gmail.com" class="btn-icon gmail"></a>
-                        <a href="https://netflix.com" class="btn-icon netflix"></a>
-                        <a href="https://youtube.com" class="btn-icon youtube"></a>
-                        <a href="https://npr.org" class="btn-icon npr"></a>
-                        <a href="https://groupme.com" class="btn-icon groupme"></a>
-                    </div>
-                </div>
-                <div class='calendar-container'>
-                    <div id='calendar'></div>
-                </div>
-                <div class='name-container row-distribution'>
-                    <span class='app-title'>AccessUpstate</span>
-                    <div class='name-box'>
-                        <span class='name-credit'>Developed By: <span class='name'>Zach Visco</span></span>
-                    </div>
+            </div>
+            <div class="container">
+                <div class="row-distribution">
+                    <a href="https://facebook.com" class="btn-icon facebook"></a>
+                    <a href="https://gmail.com" class="btn-icon gmail"></a>
+                    <a href="https://netflix.com" class="btn-icon netflix"></a>
+                    <a href="https://youtube.com" class="btn-icon youtube"></a>
+                    <a href="https://npr.org" class="btn-icon npr"></a>
+                    <a href="https://groupme.com" class="btn-icon groupme"></a>
                 </div>
             </div>
+            <div class='calendar-container'>
+                <div id='calendar'></div>
+            </div>
+            <div class='name-container row-distribution'>
+                <span class='app-title'>AccessUpstate</span>
+                <div class='name-box'>
+                    <span class='name-credit'>Developed By: <span class='name'>Zach Visco</span></span>
+                </div>
+            </div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/preloader.js"></script>
         <script src="js/apiKeys.js"></script>
+        <script src='js/options.js'></script>
         <script src="js/modifyDisplay.js"></script>
         <script src="js/weather.js"></script>
         <script src="js/clock.js"></script>
