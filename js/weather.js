@@ -14,9 +14,6 @@ function ajaxWeather(latitude, longitude) {
     var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=imperial' + '&appid=' + weatherApiKey;
     var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&cnt=5&units=imperial' + '&appid=' + weatherApiKey;
 
-    console.log(weatherURL)
-    console.log(forecastURL)
-
     $('#weather-desc').html('Weather Data Loading...');
     $.ajax({url: weatherURL,
         type: 'GET',
