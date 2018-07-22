@@ -53,6 +53,11 @@ function modifyDisplay() {
 
     $('.upstate-cal').outerWidth(headerWidth);
     // $('.calendar-container').outerWidth(headerWidth/docWidth*100 + '%');
+    if ($('.fc-center').outerWidth()>160) {
+        // $('.fc-center').css('font-size', '11px');
+    } else {
+        // $('.fc-center').css('font-size', '13px');
+    }
     if (headerWidth >= .9*docWidth) {
         $('#clock-value').css('font-size', '50px');
         $('#date-value').css('font-size', '30px');
@@ -62,6 +67,7 @@ function modifyDisplay() {
         $('#date-value').css('font-size', headerWidth/22);
         $('.upstate-seal').css('height', '85%');
     }
+    
 
     var startColWidth = (docWidth - elementSpacing)/2;
 
@@ -93,6 +99,7 @@ function modifyDisplay() {
         $('.extra-data').css('font-size', colWidth/18);
         $('.sunrise').css('font-size', colWidth/18);
         $('.sunset').css('font-size', colWidth/18);
+        // $('.fc-center').css('margin-right', colWidth - $('.fc-center').outerWidth()/2)
 
     }
 }

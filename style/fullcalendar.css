@@ -27,12 +27,15 @@ body .fc {
 /* Colors
 --------------------------------------------------------------------------------------------------*/
 .fc-center {
-    display: flex;
+    display: inline-block;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    margin: 0 auto !important;
     color: white;
     text-align: center;
-    padding-top: .25em;
-    padding-bottom: 1.2em;
-    font-size: 13px;
+    padding-top: 3px;
+    padding-bottom: 8px;
+    font-size: 12px;
 }
 .fc-highlight {
     /* when user is selecting cells */
@@ -62,12 +65,12 @@ body .fc {
     box-sizing: border-box;
     /* dimensions */
     /*margin-top: auto; */
-    /*margin-bottom: auto;*/
+    margin-bottom: 14px;
     height: 2.1em;
     /*top: .15em;*/
     /*padding: 0 .6em;*/
     /* text & cursor */
-    font-size: 1em;
+    font-size: 14px;
     /* normalize */
     white-space: nowrap;
     border-radius: 0;
@@ -186,7 +189,9 @@ previous button's border...
     /* same */
     margin-left: 0;
 }
-
+.fc-header {
+    padding: 0px;
+}
 /* Popover
 --------------------------------------------------------------------------------------------------*/
 .fc-header-title h2 {
@@ -993,8 +998,8 @@ NOTE: use percentage font sizes or else old IE chokes
 }
 
 .fc-toolbar.fc-header-toolbar {
-    margin-top: 8px;
-    margin-bottom: 4px;
+    margin-top: .6em;
+    margin-bottom: .2em;
 }
 
 .fc-toolbar.fc-footer-toolbar {
@@ -1353,6 +1358,7 @@ be a descendant of the grid when it is being dragged.
 */
 .fc-day-header {
     color: white !important;
+    font-size: 14px
     /*background-color: black;*/
 }
 .fc-center {
