@@ -35,5 +35,4 @@ function toggler(name, sitename) {
             $(sitename).hide();
         }
     });
-    console.log(name);
 }
