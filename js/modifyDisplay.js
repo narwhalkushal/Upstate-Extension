@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    modifyDisplay();
     scaleDisplay();
+    modifyDisplay();
 });
 
 $(window).on('resize', function() {
@@ -12,13 +12,33 @@ var docWidth = cssVariables.getPropertyValue('--maxwidth');
 
 function scaleDisplay() {
 
-    var scaleValue = screen.width/1680*.9;
+    // var scaleValue = screen.width/1680*.9;
     var cssVariables = getComputedStyle(document.body);
-
-    $('.scaler').css('transform', 'scale(' + scaleValue + ')');
-    document.documentElement.style.setProperty('--element-spacing', '5px');
-    document.documentElement.style.setProperty('--margin-spacing', '5px');
+    // $('body').css('font-size', screen.realwidth/112);
+    // $('.scaler').css('transform', 'scale(' + scaleValue + ')');
+    // $('.sidenav').css('transform', 'scale(' + scaleValue + ')');
+    // document.documentElement.style.setProperty('--element-spacing', '5px');
+    // document.documentElement.style.setProperty('--margin-spacing', '5px');
 }
+
+function buttonCount() {
+    var selected = [];
+    $('#mySidenav input:checked').each(function() {
+        selected.push($(this).attr('name'));
+    });
+    return selected.length;
+}
+$('.switch').click(function() {
+
+    var count = buttonCount();
+    var buttonWidth = Math.floor((headerWidth - count * elementSpacing) / count);
+    if (buttonWidth > 100) {
+        buttonWidth = 100;
+    }
+    console.log(elementSpacing);
+    $('.btn-icon').outerWidth(buttonWidth);
+    $('.btn-icon').outerHeight(buttonWidth);
+})
 function modifyDisplay() {
     // function to set right column to same height as left column
 
@@ -42,7 +62,12 @@ function modifyDisplay() {
     $('.left-column').outerHeight(5 * buttonHeight + 4 * elementSpacing);
     $('.right-column').outerHeight(5 * buttonHeight + 4 * elementSpacing);
 
-    var buttonWidth = (headerWidth - 5 * elementSpacing) / 6;
+    var count = buttonCount();
+    var buttonWidth = (headerWidth - 5 * elementSpacing) / count;
+    if (buttonWidth > 100) {
+        buttonWidth = 100;
+    }
+
     $('.sun-times').outerWidth($('.liner-box').outerWidth());
     $('.forecast-data').outerWidth($('.liner-box').outerWidth());
 
@@ -67,7 +92,7 @@ function modifyDisplay() {
         $('#date-value').css('font-size', headerWidth/22);
         $('.upstate-seal').css('height', '85%');
     }
-    
+
 
     var startColWidth = (docWidth - elementSpacing)/2;
 

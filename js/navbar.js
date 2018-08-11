@@ -1,5 +1,5 @@
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = '250px';
 }
 
 function closeNav() {
@@ -13,20 +13,27 @@ $('.closebtn').click(function() {
     closeNav();
 })
 
-$('.fb-toggle').click(function() {
+toggler('fb-toggle', '.facebook');
+toggler('gmail-toggle', '.gmail');
+toggler('netflix-toggle', '.netflix');
+toggler('youtube-toggle', '.youtube');
+toggler('npr-toggle', '.npr');
+toggler('groupme-toggle', '.groupme');
+toggler('linkedin-toggle', '.linkedin');
+toggler('espn-toggle', '.espn');
+toggler('amazon-toggle', '.amazon');
+toggler('twitter-toggle', '.twitter');
+toggler('reddit-toggle', '.reddit');
+toggler('google-drive-toggle', '.google-drive');
 
-    $('input[name="fb-toggle"]').on('click', function(){
-    if ( $(this).is(':checked') ) {
-        $('.facebook').show();
-    }
-    else {
-        $('.facebook').hide();
-    }
-});
+function toggler(name, sitename) {
 
-})
-
-function toggler() {
-
-    
+    $('input[name="' + name + '"]').on('click', function() {
+        if ($(this).is(':checked')) {
+            $(sitename).show();
+        } else {
+            $(sitename).hide();
+        }
+    });
+    console.log(name);
 }
