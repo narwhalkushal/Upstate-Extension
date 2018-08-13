@@ -35,7 +35,6 @@ $('.switch').click(function() {
     if (buttonWidth > 100) {
         buttonWidth = 100;
     }
-    console.log(elementSpacing);
     $('.btn-icon').outerWidth(buttonWidth);
     $('.btn-icon').outerHeight(buttonWidth);
 })

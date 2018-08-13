@@ -6,12 +6,32 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-$('.openbtn').click(function() {
-    openNav();
+var flag = 0;
+$('#nav-icon2').click(function() {
+    if (!flag) {
+        openNav();
+        flag = 1;
+    } else {
+        closeNav();
+        flag = 0;
+    }
 });
-$('.closebtn').click(function() {
-    closeNav();
-})
+
+// Detect all clicks on the document
+// document.addEventListener("click", function(event) {
+//     // If user clicks inside the element, do nothing
+//     if (event.target.closest("#mySidenav")) return;
+//     if ($(event.target.id == 'nav-icon2' && $('#mySidenav').outerWidth() == 0)) openNav();
+//     if (event.target.id == 'nav-icon2' && $('#mySidenav').outerWidth() > 0) {
+//         $('#nav-icon2').click();
+//         closeNav();
+//     }
+//     if ($('#mySidenav').outerWidth() > 0 && event.target.id != 'mySidenav') {
+//         $('#nav-icon2').click();
+//         closeNav();
+//     }
+// });
+
 
 toggler('fb-toggle', '.facebook');
 toggler('gmail-toggle', '.gmail');
@@ -24,7 +44,7 @@ toggler('espn-toggle', '.espn');
 toggler('amazon-toggle', '.amazon');
 toggler('twitter-toggle', '.twitter');
 toggler('reddit-toggle', '.reddit');
-toggler('google-drive-toggle', '.google-drive');
+toggler('google-calendar-toggle', '.google-calendar');
 
 function toggler(name, sitename) {
 
@@ -36,3 +56,20 @@ function toggler(name, sitename) {
         }
     });
 }
+
+function storeUserPrefs() {
+    var myText = [];
+
+    chrome.storage.sync.set({
+        mytext: 'hey'
+    });
+
+}
+
+storeUserPrefs();
+
+$(document).ready(function() {
+    $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function() {
+        $(this).toggleClass('open');
+    });
+});
