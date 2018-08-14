@@ -20,5 +20,5 @@
         "128": "img/upstate-seal.png"
     },
     "description": "Chrome Tab Extension for SUNY Upstate Students",
-    "permissions": ["storage"]
+    "permissions": ["storage", "clipboardWrite"]
 }

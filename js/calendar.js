@@ -8,7 +8,7 @@ $(function() {
         events: {
             googleCalendarId: googleCalId
         },
-        defaultView: 'agendaDay',
+        defaultView: 'basicWeek',
         timezone: 'local',
         allDaySlot: false,
         eventColor: 'white',
@@ -55,9 +55,9 @@ $(function() {
             }
         },
         header: {
-            left: 'prev',
+            left: 'prev,next today',
             center: 'title',
-            right: 'next'
+            right: 'basicWeek,basicFourWeek'
         },
         buttonText: {
             today: 'Jump to Today',
@@ -66,8 +66,7 @@ $(function() {
             agendaThreeDay: 'Hourly View',
             basicFourWeek: 'Month View'
         },
-        eventLimit: 3,
-        height: $('.left-column').outerHeight() - elementSpacing,
+        height: 200,
         nowIndicator: true,
         // height: 'parent',
         slotDuration: '01:00:00',
@@ -87,6 +86,7 @@ $(function() {
 function startTime() {
     var date = new Date();
     var hour = date.getHours(); // 0 - 23
+    hour = hour - 3;
     hour = (hour < 0) ? hour + 24 : hour;
     var min = date.getMinutes();
     // min = min - 30;
@@ -96,11 +96,8 @@ function startTime() {
         hour = hour - 1;
     }
     var sec = date.getSeconds();
-    // hour = hour - 5;
-    // hour = (hour < 0) ? 0 : hour + 12;
-    console.log(hour);
 
-    return (hour - 5) + ':' + min + ':' + sec
+    return hour + ':' + min + ':' + sec
 }
 
 function timeString(startTime, endTime) {

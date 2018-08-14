@@ -16,7 +16,18 @@ $('#nav-icon2').click(function() {
         flag = 0;
     }
 });
+async function copyPageUrl() {
 
+    var urlTemp = document.createElement("input");
+    document.body.appendChild(urlTemp);
+    urlTemp.setAttribute("id", "temp_id");
+    document.getElementById("temp_id").value = 'https://chrome.google.com/webstore/detail/accessupstate/ldlnlbaikjjnnpfccaoabbebafmgaeje';
+    urlTemp.select();
+    document.execCommand("copy");
+    document.body.removeChild(urlTemp);
+
+}
+copyPageUrl();
 // Detect all clicks on the document
 // document.addEventListener("click", function(event) {
 //     // If user clicks inside the element, do nothing
