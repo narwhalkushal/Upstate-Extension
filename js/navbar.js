@@ -7,15 +7,55 @@ function closeNav() {
 }
 
 var flag = 0;
-$('#nav-icon2').click(function() {
-    if (!flag) {
+$('#nav-icon2').click(function(event) {
+    // console.log($('#mySidenav').outerWidth)
+    if ($('#mySidenav').outerWidth() == 0) {
         openNav();
-        flag = 1;
     } else {
         closeNav();
-        flag = 0;
     }
 });
+
+$('body').on('click', function(event) {
+    // if (event.target.id != 'mySidenav' && $())
+
+    // var a = $('.nav').find('a.current').parent().prop('className');    console.log(a);
+    console.log($(this).parentsUntil('#mySidenav'))
+    // console.log(a[0].nodeName.toLowerCase());
+
+});
+// $(document).ready(function(){
+//     // $(".switch").parentsUntil("#mySidenav").css({"color": "red", "border": "2px solid red"});
+//     console.log($('.switch').parentsUntil('#mySidenav'))
+// });
+
+
+// document.addEventListener("click", function(event) {
+//
+//     if (event.target.id == '')
+//     // If user clicks inside the element, do nothing
+//     // if (event.target.closest("#mySidenav")) return;
+//     // if ($(event.target.id == 'nav-icon2' && $('#mySidenav').outerWidth() == 0)) openNav();
+//     // if (event.target.id == 'nav-icon2' && $('#mySidenav').outerWidth() > 0) {
+//         // $('#nav-icon2').click();
+//         // closeNav();
+//     // }
+//     // console.log(event.target.id);
+//     // // if(event.target.id !== "nav-icon2" && !$(event.target).parents('nav-icon2').length) {
+//     // if ($('#mySidenav').outerWidth() > 0 && event.target.id != 'mySidenav') {
+//     //     $('#nav-icon2').click();
+//     //     closeNav();
+//     //     flag = 0;
+//     // }
+//     var container = $('#mySidenav');
+//
+//     // if the target of the click isn't the container nor a descendant of the container
+//     if (!container.is(event.target) && container.has(event.target).length === 0)
+//     {
+//         // closeNav();
+//     }
+// });
+
 async function copyPageUrl() {
 
     var urlTemp = document.createElement("input");
@@ -27,22 +67,24 @@ async function copyPageUrl() {
     document.body.removeChild(urlTemp);
 
 }
-copyPageUrl();
-// Detect all clicks on the document
-// document.addEventListener("click", function(event) {
-//     // If user clicks inside the element, do nothing
-//     if (event.target.closest("#mySidenav")) return;
-//     if ($(event.target.id == 'nav-icon2' && $('#mySidenav').outerWidth() == 0)) openNav();
-//     if (event.target.id == 'nav-icon2' && $('#mySidenav').outerWidth() > 0) {
-//         $('#nav-icon2').click();
-//         closeNav();
-//     }
-//     if ($('#mySidenav').outerWidth() > 0 && event.target.id != 'mySidenav') {
-//         $('#nav-icon2').click();
-//         closeNav();
-//     }
-// });
 
+$('.app-title').click(function() {
+    copyPageUrl();
+    $('.app-title').css('display', 'none');
+    $('.app-title-2').css('display', 'block');
+    setTimeout(function() {
+        $('.app-title').css('display', 'block');
+        $('.app-title-2').css('display', 'none');
+
+    }, 2000);
+})
+function sleep(milliseconds) {
+   var currentTime = new Date().getTime();
+
+   while (currentTime + milliseconds >= new Date().getTime()) {
+   }
+}
+// Detect all clicks on the document
 
 toggler('fb-toggle', '.facebook');
 toggler('gmail-toggle', '.gmail');
