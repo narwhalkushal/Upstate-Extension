@@ -15,7 +15,7 @@ $(function() {
         firstDay: day - 3,
         eventColor: '#D10F39',
         eventMouseover: function(calEvent, jsEvent) {
-            var tooltip = '<div class="tooltipevent"> <span class="event-title">' + calEvent.title + '</span><br>Location: ' + calEvent.location + '<br>Time: ' + timeString(calEvent.start, calEvent.end) + '</div>';
+            var tooltip = '<div class="tooltipevent"> <span class="event-title">' + calEvent.title + '</span><br>Location: ' + calEvent.location + '<br>Time: ' + timeString(calEvent.start, calEvent.end) + '<br>Description: ' + calEvent.Description + '</div>';
             var $tooltip = $(tooltip).appendTo('body');
             var wid = $('.tooltipevent').outerWidth();
             $(this).css('background-color', 'rgba(39,110,241)');
