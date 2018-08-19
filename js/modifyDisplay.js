@@ -99,7 +99,7 @@ function modifyDisplay() {
         $('.forecast-temp').css('font-size', '20px');
         $('.weather-info').css('font-size', '30px');
         $('#weather-desc').css('font-size', '23px');
-        $('#temp').css('font-size', '45px');
+        $('#temp').css('font-size', '55px');
         $('.max-temp').css('font-size', '15px');
         $('.min-temp').css('font-size', '15px');
         $('.sun-desc').css('font-size', '20px');

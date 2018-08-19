@@ -12,7 +12,7 @@ var lastIndex = 4;
 function ajaxWeather(latitude, longitude) {
 
     var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=imperial' + '&appid=' + weatherApiKey;
-    var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&cnt=5&units=imperial' + '&appid=' + weatherApiKey;
+    var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&cnt=8&units=imperial' + '&appid=' + weatherApiKey;
 
     $('#weather-desc').html('Weather Data Loading...');
     $.ajax({url: weatherURL,
@@ -26,6 +26,8 @@ function ajaxWeather(latitude, longitude) {
             $('.divider').text("");
         }
     });
+
+
 
     $.ajax({url: forecastURL,
         type: 'GET',
@@ -165,6 +167,19 @@ function hoursValues(jsonFile) {
     h[2] = convertTimeValues(hStart + 6);
     h[3] = convertTimeValues(hStart + 9);
 
+    var close = 24;
+    var temp = hStart;
+    var next = 3;
+    var count = 0;
+    var i = 0;
+
+    while (i < 3) {
+        temp = 24 - temp;
+        console.log(temp)
+
+        i++
+    }
+    // console.log(hStart + 3*count)
     return h;
 }
 

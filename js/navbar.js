@@ -92,11 +92,7 @@ $(':checkbox').click(function(event) {
 });
 
 function setStorage(keyChain, value) {
-    // keyChain = '"' + keyChain + '"'
-    chrome.storage.sync.set({[keyChain]: value}, function() {
-        // console.log(keyChain)
-        // console.log(value);
-            });
+    chrome.storage.sync.set({[keyChain]: value});
 }
 
 $(document).ready(function() {
