@@ -77,8 +77,8 @@ function sleep(milliseconds) {
    }
 }
 
-var toggleClasses = ['.facebook', '.gmail', '.netflix', '.youtube', '.npr', '.groupme', '.presence', '.linkedin', '.espn', '.amazon', '.twitter', '.reddit', '.google-calendar'];
-var toggleNames = ['fb-toggle', 'gmail-toggle', 'netflix-toggle', 'youtube-toggle', 'npr-toggle', 'groupme-toggle', 'presence-toggle', 'linkedin-toggle', 'espn-toggle', 'amazon-toggle', 'twitter-toggle', 'reddit-toggle', 'google-calendar-toggle'];
+var toggleClasses = ['.facebook', '.gmail', '.netflix', '.youtube', '.npr', '.groupme', '.presence', '.linkedin', '.espn', '.amazon', '.twitter', '.google-calendar'];
+var toggleNames = ['fb-toggle', 'gmail-toggle', 'netflix-toggle', 'youtube-toggle', 'npr-toggle', 'groupme-toggle', 'presence-toggle', 'linkedin-toggle', 'espn-toggle', 'amazon-toggle', 'twitter-toggle', 'google-calendar-toggle'];
 
 $(':checkbox').click(function(event) {
     setStorage(event.target.className, $(this).is(':checked'));
@@ -98,31 +98,22 @@ function setStorage(keyChain, value) {
         // console.log(value);
             });
 }
-function useStorage(keyChain) {
-    // console.log("'" + keyChain + "'")
-
-    chrome.storage.sync.get(["'" + keyChain + "'"], function(result) {
-        console.log(result);
-        // console.log(result.youtube-toggle);
-        // console.log(key);
-        // console.log(result.key);
-        // var temp = toggleNames.indexOf(result);
-        // console.log(value);
-        // if (result.key) {
-
-        // }
-    });
-
-}
 
 $(document).ready(function() {
-    for (var i = 0; i < toggleNames.length; i++) {
-        var tempName = 
-        useStorage(toggleNames[i]);
-    }
     chrome.storage.sync.get(null, function(items) {
     var allKeys = Object.values(items);
-    console.log(allKeys);
-    console.log(Object.keys(items))
+    for (var i = 0; i < allKeys.length; i ++ ) {
+        var temp = toggleNames.indexOf(Object.keys(items)[i]);
+        if (allKeys[i]) {
+            $(toggleClasses[temp]).show();
+            $('.' + toggleNames[temp]).prop('checked', true);
+        } else {
+            $(toggleClasses[temp]).hide();
+            $('.' + toggleNames[temp]).prop('checked', false);
+        }
+    }
+    modifyDisplay();
+    // console.log(Object.keys(items))
+    // console.log(allKeys);
 });
 })

@@ -29,8 +29,7 @@ function buttonCount() {
     });
     return selected.length;
 }
-$('.switch').click(function() {
-
+function buttonSizer() {
     var count = buttonCount();
     var buttonWidth = Math.floor((headerWidth - count * elementSpacing) / count);
     if (buttonWidth > 100) {
@@ -38,7 +37,10 @@ $('.switch').click(function() {
     }
     $('.btn-icon').outerWidth(buttonWidth);
     $('.btn-icon').outerHeight(buttonWidth);
-})
+}
+$('.switch').click(function() {
+    buttonSizer();
+});
 function modifyDisplay() {
     // function to set right column to same height as left column
 
@@ -62,17 +64,11 @@ function modifyDisplay() {
     $('.left-column').outerHeight(5 * buttonHeight + 4 * elementSpacing);
     $('.right-column').outerHeight(5 * buttonHeight + 4 * elementSpacing);
 
-    var count = buttonCount();
-    var buttonWidth = (headerWidth - 5 * elementSpacing) / count;
-    if (buttonWidth > 100) {
-        buttonWidth = 100;
-    }
+    buttonSizer();
 
     $('.sun-times').outerWidth($('.liner-box').outerWidth());
     $('.forecast-data').outerWidth($('.liner-box').outerWidth());
 
-    $('.btn-icon').outerWidth(buttonWidth);
-    $('.btn-icon').outerHeight(buttonWidth);
 
     $('.upstate-seal').outerWidth($('.upstate-seal').outerHeight())
 
