@@ -683,8 +683,10 @@ input:checked+.slider:before {
     height: 100%;
     /*padding: 1.5em 0;*/
     color: white;
+    text-align: center;
     justify-content: center;
     align-items: center;
+    vertical-align: middle;
     font-weight: 700;
 }
 
