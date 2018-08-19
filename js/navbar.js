@@ -10,15 +10,16 @@ function openNav() {
 }
 
 function closeNav() {
-    $('#mySidenav').fadeOut(120);
+    // $('#mySidenav').fadeOut(120);
     $('#mySidenav').width(0);
     $('#mySidenav').css('border',  '0');
-    // $('#nav-icon2 span').css('background', 'var(--main-color)');
 }
 
 $('#nav-icon2').click(function() {
     if ($('#mySidenav').width() == 0) {
         openNav();
+    } else {
+        closeNav();
     }
 })
 document.addEventListener("click", (evt) => {
@@ -57,8 +58,12 @@ async function copyPageUrl() {
     urlTemp.select();
     document.execCommand("copy");
     document.body.removeChild(urlTemp);
-
 }
+$('.app-title').hover(function() {
+    $('.app-title').html('Share with a friend?');
+}, function() {
+    $('.app-title').html('AccessUpstate');
+})
 
 $('.app-title').click(function() {
     copyPageUrl();
