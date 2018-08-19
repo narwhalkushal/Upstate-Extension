@@ -1,5 +1,6 @@
 function openNav() {
-    document.getElementById("mySidenav").style.width = '250px';
+    $('#mySidenav').fadeIn(120);
+    $('#mySidenav').width('250px');
     $('#mySidenav').css('border',  '3px solid white');
     $('#mySidenav').css('border-left',  '0');
     $('#mySidenav').css('border-top',  '0');
@@ -9,7 +10,8 @@ function openNav() {
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+    $('#mySidenav').fadeOut(120);
+    $('#mySidenav').width(0);
     $('#mySidenav').css('border',  '0');
     // $('#nav-icon2 span').css('background', 'var(--main-color)');
 }
@@ -33,7 +35,6 @@ document.addEventListener("click", (evt) => {
     } while (targetElement);
 
     if ($('#mySidenav').width() > 0) {
-        console.log($('#nav-icon2').width());
         closeNav();
          if (event.target.id != 'nav-icon2' && event.target.className != 'icon-span') {
              $('#nav-icon2').click();
@@ -41,6 +42,12 @@ document.addEventListener("click", (evt) => {
          }
     }
 });
+$(document).ready(function() {
+    $('#nav-icon2').click(function() {
+        $(this).toggleClass('open');
+    });
+});
+
 async function copyPageUrl() {
 
     var urlTemp = document.createElement("input");
@@ -69,46 +76,53 @@ function sleep(milliseconds) {
    while (currentTime + milliseconds >= new Date().getTime()) {
    }
 }
-// Detect all clicks on the document
 
-toggler('fb-toggle', '.facebook');
-toggler('gmail-toggle', '.gmail');
-toggler('netflix-toggle', '.netflix');
-toggler('youtube-toggle', '.youtube');
-toggler('npr-toggle', '.npr');
-toggler('groupme-toggle', '.groupme');
-toggler('presence-toggle', '.presence');
-toggler('linkedin-toggle', '.linkedin');
-toggler('espn-toggle', '.espn');
-toggler('amazon-toggle', '.amazon');
-toggler('twitter-toggle', '.twitter');
-toggler('reddit-toggle', '.reddit');
-toggler('google-calendar-toggle', '.google-calendar');
+var toggleClasses = ['.facebook', '.gmail', '.netflix', '.youtube', '.npr', '.groupme', '.presence', '.linkedin', '.espn', '.amazon', '.twitter', '.reddit', '.google-calendar'];
+var toggleNames = ['fb-toggle', 'gmail-toggle', 'netflix-toggle', 'youtube-toggle', 'npr-toggle', 'groupme-toggle', 'presence-toggle', 'linkedin-toggle', 'espn-toggle', 'amazon-toggle', 'twitter-toggle', 'reddit-toggle', 'google-calendar-toggle'];
 
-function toggler(name, sitename) {
+$(':checkbox').click(function(event) {
+    setStorage(event.target.className, $(this).is(':checked'));
+    // console.log(event.target.className);
+    var temp = toggleNames.indexOf(event.target.className);
+    if ($(this).is(':checked')) {
+        $(toggleClasses[temp]).show();
+    } else {
+        $(toggleClasses[temp]).hide();
+    }
+});
 
-    $('input[name="' + name + '"]').on('click', function() {
-        if ($(this).is(':checked')) {
-            $(sitename).show();
-        } else {
-            $(sitename).hide();
-        }
-    });
+function setStorage(keyChain, value) {
+    // keyChain = '"' + keyChain + '"'
+    chrome.storage.sync.set({[keyChain]: value}, function() {
+        // console.log(keyChain)
+        // console.log(value);
+            });
 }
+function useStorage(keyChain) {
+    // console.log("'" + keyChain + "'")
 
-function storeUserPrefs() {
-    var myText = [];
+    chrome.storage.sync.get(["'" + keyChain + "'"], function(result) {
+        console.log(result);
+        // console.log(result.youtube-toggle);
+        // console.log(key);
+        // console.log(result.key);
+        // var temp = toggleNames.indexOf(result);
+        // console.log(value);
+        // if (result.key) {
 
-    chrome.storage.sync.set({
-        mytext: 'hey'
+        // }
     });
 
 }
-
-storeUserPrefs();
 
 $(document).ready(function() {
-    $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function() {
-        $(this).toggleClass('open');
-    });
+    for (var i = 0; i < toggleNames.length; i++) {
+        var tempName = 
+        useStorage(toggleNames[i]);
+    }
+    chrome.storage.sync.get(null, function(items) {
+    var allKeys = Object.values(items);
+    console.log(allKeys);
+    console.log(Object.keys(items))
 });
+})

@@ -216,6 +216,7 @@ input:checked+.slider:before {
     top: 0;
     left: 0;
     /*bottom: 0;*/
+    display: none;
     background-color: rgba(0, 20, 140, .7);
     /*border: 3px solid white;*/
     overflow-x: hidden;

@@ -12,12 +12,12 @@ var docWidth = cssVariables.getPropertyValue('--maxwidth');
 
 function scaleDisplay() {
 
-    var scaleValue = screen.width/1680*.9;
+    // var scaleValue = screen.width/1680*.9;
     var cssVariables = getComputedStyle(document.body);
     // $('body').css('font-size', screen.realwidth/112);
-    $('.scaler').css('transform', 'scale(' + scaleValue + ')');
-    $('.sidenav').css('transform', 'scale(' + scaleValue + ')');
-    $('#nav-icon2').css('transform', 'scale(' + scaleValue + ')');
+    // $('.scaler').css('transform', 'scale(' + scaleValue + ')');
+    // $('.sidenav').css('transform', 'scale(' + scaleValue + ')');
+    // $('#nav-icon2').css('transform', 'scale(' + scaleValue + ')');
     // document.documentElement.style.setProperty('--element-spacing', '5px');
     // document.documentElement.style.setProperty('--margin-spacing', '5px');
 }
